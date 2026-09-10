@@ -8,6 +8,8 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { BuyModal } from './components/BuyModal';
+import { FloatingBackgroundC } from './components/FloatingBackgroundC';
+import { SoundToggle } from './components/SoundToggle';
 
 // Views
 import { HomeView } from './components/HomeView';
@@ -155,18 +157,24 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-400 font-sans flex flex-col antialiased">
+    <div className="min-h-screen bg-black text-[#ebebe6] font-sans flex flex-col antialiased relative selection:bg-[#27FCF2] selection:text-black">
       
+      {/* Signature Creativeans 3D Rotating C Floating in Background */}
+      <FloatingBackgroundC opacity={currentPath === '/' ? 1.0 : 0.45} />
+
       {/* Navigation Head */}
       <Header currentPath={currentPath} onNavigate={navigateTo} />
 
       {/* Dynamic Page Stage Container */}
-      <main className="flex-1 animate-fade-in relative">
+      <main className="flex-1 animate-fade-in relative z-10">
         {renderView()}
       </main>
 
       {/* Global footer with legal notice links */}
       <Footer onNavigate={navigateTo} />
+
+      {/* Creativeans Ambient Atmosphere / Sound Toggle */}
+      <SoundToggle />
 
       {/* GDPR Compliant cookies bar */}
       <CookieBanner />

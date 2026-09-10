@@ -6,7 +6,20 @@
 import React, { useState } from 'react';
 import { ShopifyTheme } from '../types';
 import { ThemeCard } from './ThemeCard';
-import { ArrowRight, Zap, RefreshCw, HelpCircle, ShieldCheck, BadgeCheck, Download, Layout, Globe, ShoppingCart, Star } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ArrowUpRight, 
+  Sparkles, 
+  Layout, 
+  Globe, 
+  Star, 
+  ShieldCheck, 
+  Zap, 
+  Layers, 
+  Cpu, 
+  CheckCircle2,
+  Download
+} from 'lucide-react';
 
 interface HomeViewProps {
   themes: ShopifyTheme[];
@@ -24,114 +37,177 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
   }).slice(0, 6);
 
   return (
-    <div id="home-view" className="space-y-24 pb-20">
+    <div id="home-view" className="relative z-10 space-y-28 pb-28">
       
-      {/* 1. Hero Section */}
-      <section className="relative pt-12 pb-20 md:py-32 overflow-hidden">
-        {/* Subtle decorative background gradients */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative px-4 sm:px-6">
-          <div className="inline-flex items-center gap-2 bg-neutral-900 border border-neutral-800 rounded-full px-4 py-1.5 text-xs text-neutral-300 transform hover:scale-102 transition-transform duration-100">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500 load-indicator animate-pulse" />
-            <span>Certified Shopify 2.0 & Next.js Website Templates — Direct Download</span>
+      {/* 1. Signature Creativeans Hero Section */}
+      <section className="relative flex min-h-[90vh] md:min-h-[94vh] flex-col items-center justify-center px-6 pt-24 pb-16">
+        <div className="mx-auto flex flex-col items-center gap-x-12 md:flex-row md:items-end w-full max-w-7xl">
+          
+          {/* Left: Giant Memogram Display Headline */}
+          <div className="font-memogram text-[#ebebe6] text-[3.5rem] leading-[1.02] sm:text-[4.75rem] md:leading-[1.04] lg:text-[5.75rem] xl:text-[6.85rem] select-none w-full md:w-auto">
+            <div className="space-y-4">
+              <h1 className="flex w-fit flex-col md:gap-y-3">
+                <span className="tracking-tight">Build A Store</span>
+                <span className="flex items-center gap-3 sm:gap-5">
+                  That
+                  <hr className="inline-block h-[2px] w-28 sm:w-44 md:w-52 border-none bg-[#ebebe6] align-middle my-auto" />
+                </span>
+                <span className="place-self-end italic font-normal text-[#ebebe6] pr-2">
+                  Matters
+                </span>
+              </h1>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Elite <span className="bg-gradient-to-r from-emerald-400 via-emerald-200 to-white bg-clip-text text-transparent">Shopify Themes</span> & <span className="text-white">Websites</span> <br />
-            engineered to grow your brand.
-          </h1>
+          {/* Right: Editorial Description & Action CTAs */}
+          <div className="mb-6 md:w-[420px] lg:w-[470px] shrink-0 mt-10 md:mt-0">
+            <div className="text-[#ebebe6]/80 text-[1.02rem] leading-relaxed flex flex-col gap-y-4 text-center md:text-left font-sans">
+              <p>
+                Generic templates made every online storefront look the same. At Croese, we engineer Shopify themes and production web flagships that elevate brands from the inside out—with sub-second load speeds and conversion-obsessed UX.
+              </p>
+            </div>
 
-          <p className="max-w-2xl mx-auto text-sm sm:text-base text-neutral-400 leading-relaxed">
-            High-converting digital templates with clean liquid and React architecture. Instant ZIP download, commercial license, and 30 days of technical support with secure checkout.
-          </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+              <button
+                onClick={() => onNavigate('/themes')}
+                className="rounded-full bg-[#ebebe6] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black hover:bg-white transition-all shadow-[0_0_30px_rgba(235,235,230,0.25)] active:scale-95 duration-150 cursor-pointer"
+              >
+                Explore Themes
+              </button>
+              
+              <button
+                onClick={() => onNavigate('/websites')}
+                className="rounded-full border border-[#ebebe6]/30 bg-black/40 backdrop-blur-md px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[#ebebe6] hover:bg-white/10 hover:border-[#ebebe6]/60 transition-all active:scale-95 duration-150 cursor-pointer"
+              >
+                Production Websites
+              </button>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button
-              onClick={() => onNavigate('/themes')}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-emerald-500 text-neutral-950 hover:bg-emerald-400 transition-all text-sm uppercase tracking-wider shadow-lg shadow-emerald-500/15 flex items-center justify-center gap-2 cursor-pointer animate-scale-up"
-            >
-              Browse Catalog
-              <ArrowRight className="h-4 w-4 text-neutral-950 animate-bounce-right" />
-            </button>
-            <button
-              onClick={() => onNavigate('/support')}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
-            >
-              Installation Assistance
-            </button>
+            {/* Micro badges below hero */}
+            <div className="mt-8 flex items-center justify-center md:justify-start gap-4 text-xs font-mono text-[#ebebe6]/50">
+              <span className="flex items-center gap-1.5 text-[#ebebe6]/70">
+                <Download className="w-3.5 h-3.5 text-[#27FCF2]" />
+                Instant ZIP Archive
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 text-[#ebebe6]/70">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#27FCF2]" />
+                Commercial License
+              </span>
+            </div>
+
           </div>
 
-          {/* Social Proof metrics */}
-          <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-neutral-900/80">
-            <div>
-              <span className="block text-3xl font-extrabold text-white">0.8s</span>
-              <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Average Load Speed</span>
-            </div>
-            <div>
-              <span className="block text-3xl font-extrabold text-white">+28%</span>
-              <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Conversion Rate Growth</span>
-            </div>
-            <div>
-              <span className="block text-3xl font-extrabold text-white">2,400+</span>
-              <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Stores & Sites Powered</span>
-            </div>
-            <div>
-              <span className="block text-3xl font-extrabold text-white">4.9/5</span>
-              <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">Global Satisfaction Rating</span>
-            </div>
+        </div>
+
+        {/* Floating Scroll Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#ebebe6]/40">
+          <span>Scroll to explore</span>
+          <div className="w-px h-8 bg-gradient-to-b from-[#ebebe6]/40 to-transparent animate-pulse" />
+        </div>
+      </section>
+
+      {/* 2. Stats Strip (Creativeans impact figures layout) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full rounded-3xl border border-white/10 bg-[#0a0a0a]/60 backdrop-blur-xl p-8 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
+          <div className="flex flex-col items-center text-center pt-4 md:pt-0">
+            <span className="font-memogram text-4xl lg:text-5xl font-normal text-[#ebebe6] tracking-tight">10+</span>
+            <span className="text-xs uppercase tracking-widest text-[#ebebe6]/60 mt-2 font-medium">Production Flagships</span>
+          </div>
+          <div className="flex flex-col items-center text-center pt-4 md:pt-0">
+            <span className="font-memogram text-4xl lg:text-5xl font-normal text-[#ebebe6] tracking-tight">300+</span>
+            <span className="text-xs uppercase tracking-widest text-[#ebebe6]/60 mt-2 font-medium">Active Stores Powered</span>
+          </div>
+          <div className="flex flex-col items-center text-center pt-4 md:pt-0">
+            <span className="font-memogram text-4xl lg:text-5xl font-normal text-[#ebebe6] tracking-tight">0.8s</span>
+            <span className="text-xs uppercase tracking-widest text-[#ebebe6]/60 mt-2 font-medium">Average Load Speed</span>
+          </div>
+          <div className="flex flex-col items-center text-center pt-4 md:pt-0">
+            <span className="font-memogram text-4xl lg:text-5xl font-normal text-[#27FCF2] tracking-tight">100%</span>
+            <span className="text-xs uppercase tracking-widest text-[#ebebe6]/60 mt-2 font-medium">Core Web Vitals Pass</span>
           </div>
         </div>
       </section>
 
-      {/* 2. Featured Catalog Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
-              Studio Catalog
+      {/* 3. Global Quality Benchmark Ticker */}
+      <section className="border-y border-white/10 bg-black/60 py-5 backdrop-blur-md overflow-hidden">
+        <div className="animate-marquee-fast flex items-center gap-16 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity select-none">
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY ONLINE STORE 2.0</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY PLUS READY</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SUB-SECOND LIQUID RUNTIME</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 14 PRODUCTION WEBSITES</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">ZERO APP SUBSCRIPTIONS NEEDED</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">LIFETIME COMMERCIAL USAGE</span>
+          {/* Loop duplicate */}
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY ONLINE STORE 2.0</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY PLUS READY</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SUB-SECOND LIQUID RUNTIME</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 14 PRODUCTION WEBSITES</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">ZERO APP SUBSCRIPTIONS NEEDED</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">LIFETIME COMMERCIAL USAGE</span>
+        </div>
+      </section>
+
+      {/* 4. Curated Showcase Section (Portfolio Products) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-[#27FCF2]" />
+              Croese Flagship Catalog
             </div>
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">
-              Featured Themes & Websites
+            <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+              Commercial Flagships
             </h2>
-            <p className="text-sm text-neutral-400 max-w-xl">
-              Each product includes production code, instant digital download, commercial rights, and dedicated support.
+            <p className="text-sm text-[#ebebe6]/70 max-w-xl leading-relaxed">
+              Every release is built to enterprise standards with verified Core Web Vitals, native Shopify OS 2.0 section architecture, and full source code.
             </p>
           </div>
 
-          {/* Category Toggle */}
-          <div className="flex items-center gap-2 bg-neutral-900 border border-neutral-800 p-1 rounded-xl">
+          {/* Filter Pills */}
+          <div className="flex items-center gap-2 bg-[#121212] border border-white/15 p-1 rounded-full self-start md:self-auto shadow-inner">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
-                activeCategory === 'all' ? 'bg-emerald-500 text-neutral-950' : 'text-neutral-400 hover:text-white'
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                activeCategory === 'all' ? 'bg-[#ebebe6] text-black shadow-md' : 'text-[#ebebe6]/60 hover:text-white'
               }`}
             >
-              All
+              All Editions
             </button>
             <button
               onClick={() => setActiveCategory('shopify')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer ${
-                activeCategory === 'shopify' ? 'bg-emerald-500 text-neutral-950' : 'text-neutral-400 hover:text-white'
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                activeCategory === 'shopify' ? 'bg-[#ebebe6] text-black shadow-md' : 'text-[#ebebe6]/60 hover:text-white'
               }`}
             >
               <Layout className="h-3 w-3" />
-              Shopify
+              Shopify 2.0
             </button>
             <button
               onClick={() => setActiveCategory('website')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer ${
-                activeCategory === 'website' ? 'bg-emerald-500 text-neutral-950' : 'text-neutral-400 hover:text-white'
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                activeCategory === 'website' ? 'bg-[#ebebe6] text-black shadow-md' : 'text-[#ebebe6]/60 hover:text-white'
               }`}
             >
               <Globe className="h-3 w-3" />
-              Websites
+              Production Websites
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+        {/* Product Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedThemes.map((theme) => (
             <ThemeCard
               key={theme.slug}
@@ -142,159 +218,202 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
           ))}
         </div>
 
-        <div className="text-center pt-6">
+        {/* View All CTA */}
+        <div className="text-center pt-8">
           <button
             onClick={() => onNavigate('/themes')}
-            className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold inline-flex items-center gap-1.5 group cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 bg-black/60 text-[#ebebe6] hover:bg-[#ebebe6] hover:text-black transition-all text-xs font-bold uppercase tracking-wider group cursor-pointer shadow-lg backdrop-blur-md"
           >
-            <span>Explore Entire Catalog</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <span>Browse All {themes.length} Themes & Websites</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
       </section>
 
-      {/* 3. Value Props Section */}
-      <section className="bg-neutral-900/40 border-y border-neutral-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-2">
-            <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
-              Built for high standards
-            </span>
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">
-              Why Croese?
-            </h2>
-            <p className="text-sm text-neutral-400 max-w-xl mx-auto">
-              We engineer beautiful premium utilities to help merchants and founders launch faster with clean layouts and robust core code.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
-            
-            {/* Speed card */}
-            <div className="bg-neutral-950 border border-neutral-800/80 p-6 rounded-2xl space-y-4">
-              <div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center">
-                <Zap className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white">Insane Performance & Speed</h3>
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans">
-                Every loading millisecond damages conversions. Our code exhibits 98%+ PageSpeed scores to natively boost organic SEO indexing and decrease paid traffic bounces.
-              </p>
-            </div>
-
-            {/* Instant Delivery card */}
-            <div className="bg-neutral-950 border border-neutral-800/80 p-6 rounded-2xl space-y-4">
-              <div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center">
-                <Download className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white">Instant Digital Delivery</h3>
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans">
-                Immediate checkout with zero delays. Download your full source code ZIP archive and valid commercial license key within seconds of completed payment.
-              </p>
-            </div>
-
-            {/* Updates card */}
-            <div className="bg-neutral-950 border border-neutral-800/80 p-6 rounded-2xl space-y-4">
-              <div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center">
-                <RefreshCw className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white">30 Days Technical Support</h3>
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans">
-                Benefit from 30 days of dedicated developer technical support for store installation, onboarding, and storefront setup assistance.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Customer Trust / Review Highlights */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center space-y-2">
-          <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
-            Customer & Developer Reviews
+      {/* 5. Croese Engineering Standards */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold">
+            Engineering Rigor
           </span>
-          <h2 className="text-3xl font-extrabold text-white tracking-tight">
-            Loved by ambitious independent brands & creators
+          <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+            Built for Serious Commerce
           </h2>
+          <p className="text-sm text-[#ebebe6]/70 leading-relaxed">
+            We bridge the gap between creative visual artistry, commercial performance, and clean software architecture.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-          <div className="bg-neutral-900/30 border border-neutral-800/80 p-8 rounded-2xl space-y-4 relative">
-            <span className="absolute top-6 right-8 text-6xl font-serif text-neutral-800 pointer-events-none select-none">“</span>
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/80 p-8 space-y-4 backdrop-blur-md hover:border-white/25 transition-all">
+            <span className="text-xs font-mono font-bold text-[#27FCF2]">01 / ARCHITECTURE</span>
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+              <Layers className="w-6 h-6 text-[#27FCF2]" />
             </div>
-            <p className="text-sm font-medium text-neutral-200 leading-relaxed font-sans text-justify">
-              "Buying the Manufactur theme directly was the best e-commerce decision we made. Instant download, clean code, and our bounce rate dropped down to 20% flat. Outstanding craftsmanship."
+            <h3 className="text-lg font-bold text-[#ebebe6] font-sans">Liquid 2.0 Native</h3>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+              Full section-everywhere flexibility, dynamic metaobjects, app blocks, and zero recurring theme subscriptions.
             </p>
-            <div>
-              <span className="block text-xs font-bold text-white">Justine G.</span>
-              <span className="text-[10px] text-neutral-500">Founder of Maison Justine, Paris</span>
-            </div>
           </div>
 
-          <div className="bg-neutral-900/30 border border-neutral-800/80 p-8 rounded-2xl space-y-4 relative">
-            <span className="absolute top-6 right-8 text-6xl font-serif text-neutral-800 pointer-events-none select-none">“</span>
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-              ))}
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/80 p-8 space-y-4 backdrop-blur-md hover:border-white/25 transition-all">
+            <span className="text-xs font-mono font-bold text-[#27FCF2]">02 / CONVERSION</span>
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+              <Zap className="w-6 h-6 text-[#27FCF2]" />
             </div>
-            <p className="text-sm font-medium text-neutral-200 leading-relaxed font-sans text-justify">
-              "We deployed the Palmo 3D template for our beverage brand launch. The Three.js liquid shaders and GSAP animations blew our audience away and doubled our conversion rate."
+            <h3 className="text-lg font-bold text-[#ebebe6] font-sans">Sub-Second Velocity</h3>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+              Every checkout flow, sliding drawer cart, and image gallery is mathematically optimized for 95+ PageSpeed scores.
             </p>
-            <div>
-              <span className="block text-xs font-bold text-white">David Miller</span>
-              <span className="text-[10px] text-neutral-500">Creative Director, Tropics Collective</span>
-            </div>
           </div>
+
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/80 p-8 space-y-4 backdrop-blur-md hover:border-white/25 transition-all">
+            <span className="text-xs font-mono font-bold text-[#27FCF2]">03 / OWNERSHIP</span>
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+              <ShieldCheck className="w-6 h-6 text-[#27FCF2]" />
+            </div>
+            <h3 className="text-lg font-bold text-[#ebebe6] font-sans">Full Source Code</h3>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+              Instant ZIP download including unminified Liquid or Next.js code, lifetime commercial rights, and no lock-in.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/80 p-8 space-y-4 backdrop-blur-md hover:border-white/25 transition-all">
+            <span className="text-xs font-mono font-bold text-[#27FCF2]">04 / SUPPORT</span>
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+              <Cpu className="w-6 h-6 text-[#27FCF2]" />
+            </div>
+            <h3 className="text-lg font-bold text-[#ebebe6] font-sans">Concierge Desk</h3>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+              Direct technical developer assistance from Ibrahim Ouedraogo with 24h turnaround for installation and questions.
+            </p>
+          </div>
+
         </div>
       </section>
 
-      {/* 5. Final CTA */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
-          <div className="absolute -right-20 -top-20 w-60 h-60 bg-emerald-500/5 blur-[50px] rounded-full pointer-events-none" />
-          
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Ready to launch your new store or website?
+      {/* 6. Merchant Reviews */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="text-center space-y-3">
+          <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold">
+            Merchant Feedback
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+            Trusted by Modern Retailers
           </h2>
-          <p className="max-w-xl mx-auto text-xs sm:text-sm text-neutral-400 leading-relaxed">
-            Instant digital delivery with secure checkout. Full source code, commercial rights, and 30 days of technical support included with every purchase.
+          <p className="text-sm text-[#ebebe6]/70 max-w-xl mx-auto">
+            Read how ambitious founders use Croese themes to outshine legacy storefronts.
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => onNavigate('/themes')}
-              className="px-8 py-4 rounded-xl font-bold bg-emerald-500 text-neutral-950 hover:bg-emerald-400 transition-all text-xs uppercase tracking-wider shadow-xl flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <ShoppingCart className="h-4 w-4" />
-              Explore Catalog
-            </button>
-            <button
-              onClick={() => onNavigate('/support')}
-              className="px-8 py-4 rounded-xl font-bold bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Installation Guide
-            </button>
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/90 p-8 space-y-6 backdrop-blur-md flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
+                ))}
+              </div>
+              <p className="text-sm text-[#ebebe6]/80 leading-relaxed font-sans">
+                "Deploying the Manufactur theme transformed our European storefront. The design language is exceptionally refined, and our organic conversion rate jumped 34% within two weeks."
+              </p>
+            </div>
+            <div className="pt-4 border-t border-white/10">
+              <h4 className="text-xs font-bold text-[#ebebe6] uppercase tracking-wider">Camilla Vance</h4>
+              <p className="text-[11px] text-[#ebebe6]/50 font-mono">Velour D2C Collective</p>
+            </div>
           </div>
+
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/90 p-8 space-y-6 backdrop-blur-md flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
+                ))}
+              </div>
+              <p className="text-sm text-[#ebebe6]/80 leading-relaxed font-sans">
+                "The Palmo 3D template provided the exact high-end agency look our brand required. Super smooth performance, immaculate code quality, and zero third-party app dependencies."
+              </p>
+            </div>
+            <div className="pt-4 border-t border-white/10">
+              <h4 className="text-xs font-bold text-[#ebebe6] uppercase tracking-wider">David Miller</h4>
+              <p className="text-[11px] text-[#ebebe6]/50 font-mono">Creative Director, Tropics Collective</p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-[#0a0a0a]/90 p-8 space-y-6 backdrop-blur-md flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
+                ))}
+              </div>
+              <p className="text-sm text-[#ebebe6]/80 leading-relaxed font-sans">
+                "Instant delivery, comprehensive documentation, and outstanding support. We imported the theme into Shopify in under 10 minutes. A true masterclass in digital craftsmanship."
+              </p>
+            </div>
+            <div className="pt-4 border-t border-white/10">
+              <h4 className="text-xs font-bold text-[#ebebe6] uppercase tracking-wider">Elena Rossi</h4>
+              <p className="text-[11px] text-[#ebebe6]/50 font-mono">E-Commerce Head, Studio Form</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 7. Call to Action Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl border border-white/15 bg-gradient-to-br from-[#111111] via-black to-[#080808] p-10 md:p-16 overflow-hidden text-center shadow-2xl backdrop-blur-2xl">
           
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-6 text-[10px] text-neutral-500 font-medium">
-            <span className="flex items-center gap-1">
-              <BadgeCheck className="h-3.5 w-3.5 text-emerald-400" />
-              Instant ZIP Download
+          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#27FCF2]">
+              Launch Your Flagship Store Today
             </span>
-            <span className="flex items-center gap-1">
-              <BadgeCheck className="h-3.5 w-3.5 text-emerald-400" />
-              Commercial Rights License
-            </span>
-            <span className="flex items-center gap-1">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-              Secure SSL Checkout
-            </span>
+
+            <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram leading-tight">
+              Ready to build a store that matters?
+            </h2>
+
+            <p className="text-sm sm:text-base text-[#ebebe6]/70 leading-relaxed">
+              Acquire any production theme or website template with instant ZIP delivery, lifetime commercial rights, and dedicated concierge setup assistance.
+            </p>
+
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={() => onNavigate('/themes')}
+                className="w-full sm:w-auto px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs bg-[#ebebe6] text-black hover:bg-white transition-all flex items-center justify-center gap-2 shadow-xl cursor-pointer"
+              >
+                <span>Browse All Products</span>
+                <ArrowRight className="w-4 h-4 text-black" />
+              </button>
+
+              <button
+                onClick={() => onNavigate('/contact')}
+                className="w-full sm:w-auto px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs border border-white/20 bg-white/5 text-[#ebebe6] hover:bg-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Contact Studio</span>
+                <ArrowUpRight className="w-4 h-4 text-[#ebebe6]/60" />
+              </button>
+            </div>
+
+            <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-[#ebebe6]/50 font-mono">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+                Zero Monthly Subscription
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+                Full Source Code Included
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+                Lifetime Commercial License
+              </span>
+            </div>
           </div>
+
         </div>
       </section>
 

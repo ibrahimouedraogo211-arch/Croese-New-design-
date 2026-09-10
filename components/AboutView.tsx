@@ -4,109 +4,162 @@
  */
 
 import React from 'react';
-import { Mail, Clock, ShieldCheck, MapPin, Building, Globe, Layout } from 'lucide-react';
+import { Mail, Clock, ShieldCheck, Sparkles, Layers, Zap, Cpu, CheckCircle2 } from 'lucide-react';
 
 export function AboutView() {
   return (
-    <div id="about-view" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+    <div id="about-view" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20 relative z-10">
       
       {/* Header section */}
       <div className="space-y-4 text-center">
-        <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
-          Brand Identity
-        </span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          About Croese
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-4 py-1.5 text-xs text-[#ebebe6] backdrop-blur-md">
+          <img src="/c_logo.svg" alt="" className="w-4 h-4 object-contain" />
+          <span className="font-mono text-[11px] tracking-widest uppercase font-semibold text-[#27FCF2]">
+            About Croese Commerce Studio
+          </span>
+        </div>
+        <h1 className="text-4xl sm:text-6xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram leading-tight">
+          Building Digital Flagships That Matter
         </h1>
-        <p className="text-neutral-400 text-sm max-w-2xl mx-auto leading-relaxed font-sans">
-          We engineer high-conversion Shopify templates and production website architectures for ambitious merchants, founders, and creators worldwide.
+        <p className="text-[#ebebe6]/70 text-base max-w-2xl mx-auto leading-relaxed font-sans">
+          Croese is an independent digital commerce studio dedicated to engineering high-performance Shopify Online Store 2.0 themes and production website architectures.
         </p>
       </div>
 
-      {/* Main content grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-4">
+      {/* Brand & Studio Philosophy */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
         
-        {/* Left column: Story text */}
-        <div className="space-y-6 text-sm text-neutral-300 leading-relaxed font-sans text-justify">
-          <h2 className="text-xl font-bold text-white tracking-tight">Our Core Mission</h2>
+        <div className="md:col-span-7 space-y-6 text-sm text-[#ebebe6]/80 leading-relaxed font-sans">
+          <h2 className="text-2xl font-normal text-[#ebebe6] tracking-tight font-memogram uppercase">
+            Our Purpose & Vision
+          </h2>
           <p>
-            Established by design experts and senior full-stack developers, Croese bridges the gap between boutique luxury aesthetics and the raw speed optimization standards required by modern commerce and digital products.
+            Established by Ibrahim Ouedraogo, Croese was created with a single mission: to eliminate the bloated, slow, generic templates that degrade modern brand experiences and replace them with architectural masterpieces calibrated for conversion velocity.
           </p>
           <p>
-            We repeatedly witnessed founders slowing down their platforms by installing dozens of bloated auxiliary scripts. Our engineering philosophy is simple: <strong>build the most requested modern features directly into the template's clean core architecture—whether Liquid for Shopify 2.0 or React & Next.js for web applications.</strong>
+            Every storefront we release is built from clean source code—free from fragile third-party dependencies and monthly subscription lock-ins. By prioritizing native Shopify 2.0 section architecture, modular metaobjects, and sub-second page performance, we empower brands to own their digital flagships outright.
           </p>
-          <p>
-            We offer both verified Shopify Online Store 2.0 themes and complete production website templates with direct instant purchasing and delivery.
-          </p>
-        </div>
-
-        {/* Right column: Individual seller info */}
-        <div className="bg-neutral-900/60 border border-neutral-800 p-6 rounded-2xl space-y-6">
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider pb-3 border-b border-neutral-800 font-sans">
-            Legal Information & Operator
-          </h3>
           
-          <p className="text-xs text-neutral-400 leading-relaxed font-sans text-justify">
-            This website is operated by an independent individual creator, dedicated to crafting high-performance digital products:
-          </p>
-
-          <div className="space-y-4 text-xs font-sans">
+          <div className="pt-4 space-y-4">
+            <h3 className="text-base font-normal text-[#ebebe6] uppercase tracking-wider font-memogram">
+              Engineering Pillars
+            </h3>
             
-            {/* Seller Name */}
-            <div className="flex items-start gap-3">
-              <Building className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-              <div>
-                <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-bold font-sans">Operator / Seller</span>
-                <span className="text-neutral-200 font-semibold text-sm">Ibrahim Ouedraogo</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-white/10 bg-black/60 p-5 space-y-2 backdrop-blur-md">
+                <div className="flex items-center gap-2 text-[#ebebe6] font-bold text-xs uppercase">
+                  <Layers className="w-4 h-4 text-[#27FCF2]" />
+                  <span>Liquid 2.0 Architecture</span>
+                </div>
+                <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+                  Full section-everywhere flexibility, dynamic collection matrices, and metaobject blocks editable in the visual Shopify Theme Editor.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-black/60 p-5 space-y-2 backdrop-blur-md">
+                <div className="flex items-center gap-2 text-[#ebebe6] font-bold text-xs uppercase">
+                  <Zap className="w-4 h-4 text-[#27FCF2]" />
+                  <span>Sub-Second Velocity</span>
+                </div>
+                <p className="text-xs text-[#ebebe6]/60 leading-relaxed">
+                  Engineered to achieve 95+ PageSpeed insights scores and pass all Google Core Web Vitals on desktop and mobile.
+                </p>
               </div>
             </div>
-
-            {/* Country of Operation */}
-            <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-              <div>
-                <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-bold font-sans">Country of Operation</span>
-                <span className="text-neutral-200 font-semibold">The Netherlands</span>
-              </div>
-            </div>
-
-            {/* Payment & Security */}
-            <div className="flex items-start gap-3">
-              <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-              <div>
-                <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-bold font-sans">Secure Checkout</span>
-                <span className="text-neutral-300 leading-relaxed block">
-                  All transactions are handled securely through encrypted payment processing with immediate digital delivery of source files and license certificates.
-                </span>
-              </div>
-            </div>
-
-            {/* Support info */}
-            <div className="flex items-start gap-3">
-              <Mail className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-              <div>
-                <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-bold font-sans">Direct Contact & Support</span>
-                <a href="mailto:ibraoued14@gmail.com" className="text-emerald-400 font-mono font-semibold hover:underline block">
-                  ibraoued14@gmail.com
-                </a>
-                <span className="block text-[10px] text-neutral-500 mt-1 leading-normal">
-                  For any questions regarding licensing, digital deliveries, or technical guidance, feel free to contact us directly.
-                </span>
-              </div>
-            </div>
-
           </div>
-
-          <div className="h-px bg-neutral-800" />
-
-          {/* SLA / Availability */}
-          <div className="flex items-center gap-3 text-xs text-neutral-400 font-sans">
-            <Clock className="h-4 w-4 text-emerald-400 shrink-0" />
-            <span>Customer support response window: <strong>Mon - Fri, within 24h</strong></span>
-          </div>
-
         </div>
 
+        {/* Studio Card / Operator Facts */}
+        <div className="md:col-span-5 space-y-6">
+          <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#111111] to-black p-8 space-y-6 shadow-2xl backdrop-blur-xl">
+            <div className="space-y-2 pb-4 border-b border-white/10">
+              <span className="text-[10px] font-mono tracking-widest text-[#27FCF2] uppercase font-bold block">
+                Direct Governance
+              </span>
+              <h3 className="text-xl font-normal text-[#ebebe6] font-memogram uppercase">
+                Studio Leadership
+              </h3>
+              <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                Each product release, technical update, and customer support ticket is personally reviewed and handled by founder Ibrahim Ouedraogo.
+              </p>
+            </div>
+
+            <div className="space-y-4 text-xs font-sans">
+              <div className="flex items-center gap-3">
+                <Clock className="w-4 h-4 text-[#27FCF2] shrink-0" />
+                <div>
+                  <span className="text-[#ebebe6] font-semibold block">24h Turnaround Support</span>
+                  <span className="text-[11px] text-[#ebebe6]/50">Installation assistance & code guidance</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-4 h-4 text-[#27FCF2] shrink-0" />
+                <div>
+                  <span className="text-[#ebebe6] font-semibold block">Commercial Lifetime License</span>
+                  <span className="text-[11px] text-[#ebebe6]/50">Perpetual use on 1 commercial store</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#27FCF2] shrink-0" />
+                <div>
+                  <span className="text-[#ebebe6] font-semibold block">Founder Contact</span>
+                  <a href="mailto:ibraoued14@gmail.com" className="text-[11px] text-[#27FCF2] hover:underline font-mono">
+                    ibraoued14@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-white/10">
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#ebebe6]/60">
+                <span>Code Guarantee</span>
+                <span className="text-[#27FCF2] font-semibold">100% Unobfuscated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Trust & Guarantee Grid */}
+      <div className="rounded-3xl border border-white/10 bg-black/60 p-8 md:p-12 space-y-8 backdrop-blur-xl">
+        <h3 className="text-xl font-normal text-[#ebebe6] font-memogram uppercase text-center">
+          The Croese Quality Commitment
+        </h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+          <div className="space-y-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2 text-white font-bold text-xs uppercase font-mono">
+              <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+              <span>Zero App Dependencies</span>
+            </div>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed font-sans">
+              Critical conversion tools—slide-out carts, free shipping tiers, cross-sells, swatch pickers—are coded directly in Liquid with zero monthly app fees.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2 text-white font-bold text-xs uppercase font-mono">
+              <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+              <span>Instant Digital Delivery</span>
+            </div>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed font-sans">
+              Immediately following checkout, your production .ZIP archive is delivered directly with one-click Shopify upload instructions.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2 text-white font-bold text-xs uppercase font-mono">
+              <CheckCircle2 className="w-4 h-4 text-[#27FCF2]" />
+              <span>Full Source Code</span>
+            </div>
+            <p className="text-xs text-[#ebebe6]/60 leading-relaxed font-sans">
+              Enjoy complete ownership to customize styles, Liquid templates, JavaScript modules, and Tailwind configurations without limitations.
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>

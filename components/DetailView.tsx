@@ -25,13 +25,13 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
   const isWebsite = theme.category === 'website';
 
   return (
-    <div id={`detail-view-${theme.slug}`} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+    <div id={`detail-view-${theme.slug}`} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 relative z-10">
       
       {/* Back button */}
       <div>
         <button
           onClick={() => onNavigate('/themes')}
-          className="group inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-400 hover:text-emerald-400 transition-colors cursor-pointer"
+          className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#ebebe6]/60 hover:text-[#27FCF2] transition-colors cursor-pointer"
         >
           <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
           Back to Catalog
@@ -43,7 +43,7 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
         
         {/* Left Column: Cover & screenshot gallery */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-white/15 bg-black shadow-2xl">
             {activeImage.includes('.mp4') ? (
               <video
                 key={activeImage}
@@ -75,8 +75,8 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                   <button
                     key={idx}
                     onClick={() => setActiveImage(imgUrl)}
-                    className={`relative aspect-[16/10] rounded-xl overflow-hidden border transition-all cursor-pointer bg-neutral-950 ${
-                      isSelected ? 'border-emerald-500 ring-2 ring-emerald-500/20' : 'border-neutral-800 hover:border-neutral-700'
+                    className={`relative aspect-[16/10] rounded-2xl overflow-hidden border transition-all cursor-pointer bg-black ${
+                      isSelected ? 'border-[#27FCF2] ring-2 ring-[#27FCF2]/30' : 'border-white/10 hover:border-white/25'
                     }`}
                   >
                     {isVideo ? (
@@ -88,10 +88,10 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                           className="w-full h-full object-cover opacity-70"
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                          <Play className="h-3.5 w-3.5 text-emerald-400 fill-emerald-400" />
+                          <Play className="h-3.5 w-3.5 text-[#27FCF2] fill-[#27FCF2]" />
                         </div>
-                        <span className="absolute bottom-1 right-1 text-[7px] uppercase tracking-wider bg-black/80 text-emerald-400 px-1 py-0.5 rounded font-mono font-bold">
-                          Vidéo
+                        <span className="absolute bottom-1 right-1 text-[7px] uppercase tracking-wider bg-black/80 text-[#27FCF2] px-1 py-0.5 rounded font-mono font-bold">
+                          Video
                         </span>
                       </div>
                     ) : (
@@ -115,9 +115,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 href={theme.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-xl border border-neutral-800 bg-neutral-900/60 hover:bg-neutral-850 text-neutral-200 hover:text-white transition-all text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-4 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 text-[#ebebe6] hover:text-white transition-all text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2"
               >
-                <ExternalLink className="h-4 w-4 text-emerald-400" />
+                <ExternalLink className="h-4 w-4 text-[#27FCF2]" />
                 <span>Open Live Interactive Demo</span>
               </a>
             )}
@@ -126,9 +126,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 href="https://www.awwwards.com/inspiration/desktop-palmo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl border border-neutral-800/80 bg-neutral-950 hover:bg-neutral-900 text-neutral-400 hover:text-emerald-400 transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
               >
-                <Globe className="h-3.5 w-3.5 text-emerald-400" />
+                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
                 <span>View on Awwwards Inspiration</span>
               </a>
             )}
@@ -137,9 +137,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 href="https://www.awwwards.com/sites/sigma-imaging"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl border border-neutral-800/80 bg-neutral-950 hover:bg-neutral-900 text-neutral-400 hover:text-emerald-400 transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
               >
-                <Globe className="h-3.5 w-3.5 text-emerald-400" />
+                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
                 <span>View on Awwwards Nominee</span>
               </a>
             )}
@@ -148,9 +148,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 href="https://www.awwwards.com/sites/brigade-overland"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl border border-neutral-800/80 bg-neutral-950 hover:bg-neutral-900 text-neutral-400 hover:text-emerald-400 transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
               >
-                <Globe className="h-3.5 w-3.5 text-emerald-400" />
+                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
                 <span>View on Awwwards Nominee</span>
               </a>
             )}
@@ -162,37 +162,37 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
           
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded font-extrabold font-mono tracking-wider uppercase flex items-center gap-1">
+              <span className="text-[10px] bg-white/5 text-[#27FCF2] border border-white/15 px-3 py-1 rounded-full font-bold font-mono tracking-wider uppercase flex items-center gap-1.5">
                 {isWebsite ? <Globe className="h-3 w-3" /> : <Code2 className="h-3 w-3" />}
                 {theme.categoryLabel || (isWebsite ? 'Website Template' : 'Shopify OS 2.0')}
               </span>
-              <div className="flex items-center gap-1 text-xs text-amber-500 font-semibold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/10">
-                <Star className="h-3 w-3 fill-amber-500" />
+              <div className="flex items-center gap-1 text-xs text-amber-400 font-semibold bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+                <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
                 <span>{avgRating}</span>
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-none">
-              {theme.name} {isWebsite ? 'Site' : 'Theme'}
+            <h1 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight leading-none uppercase font-memogram">
+              {theme.name}
             </h1>
-            <p className="text-sm text-emerald-400 font-medium italic">
+            <p className="text-sm text-[#27FCF2] font-medium tracking-wide">
               {theme.tagline}
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans text-justify">
+          <p className="text-xs sm:text-sm text-[#ebebe6]/70 leading-relaxed font-sans">
             {theme.fullDescription}
           </p>
 
           {/* Tech Stack tags if present */}
           {theme.techStack && theme.techStack.length > 0 && (
-            <div className="space-y-1.5">
-              <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500 font-bold block">
+            <div className="space-y-2">
+              <span className="text-[10px] uppercase font-mono tracking-wider text-[#ebebe6]/50 font-bold block">
                 Tech Stack & Requirements:
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {theme.techStack.map((tech, idx) => (
-                  <span key={idx} className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-300">
+                  <span key={idx} className="text-[11px] font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#ebebe6]">
                     {tech}
                   </span>
                 ))}
@@ -201,35 +201,35 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
           )}
 
           {/* Digital Product Instant Purchase Box */}
-          <div className="bg-neutral-900/60 border border-neutral-800 p-5 rounded-2xl space-y-4">
+          <div className="bg-black/80 border border-white/15 p-6 rounded-3xl space-y-5 backdrop-blur-xl shadow-2xl">
             <div className="flex justify-between items-baseline">
               <div>
-                <span className="text-xs text-neutral-400 font-medium font-sans block">Digital Commercial License</span>
-                <span className="text-[10px] text-emerald-400 font-mono">Instant digital download</span>
+                <span className="text-xs text-[#ebebe6]/70 font-medium font-sans block">Digital Commercial License</span>
+                <span className="text-[10px] text-[#27FCF2] font-mono">Instant digital download archive</span>
               </div>
-              <span className="text-3xl font-black text-white font-mono">
+              <span className="text-3xl font-bold text-[#ebebe6] font-mono">
                 {theme.price}
-                <span className="text-xs font-normal text-neutral-500 ml-1">one-time</span>
+                <span className="text-xs font-normal text-[#ebebe6]/50 ml-1">one-time</span>
               </span>
             </div>
 
-            <div className="h-px bg-neutral-800" />
+            <div className="h-px bg-white/10" />
 
-            <div className="space-y-2 text-xs text-neutral-400 font-sans">
+            <div className="space-y-2.5 text-xs text-[#ebebe6]/70 font-sans">
               <div className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-emerald-400 shrink-0" />
+                <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
                 <span>Instant ready-to-deploy ZIP archive download</span>
               </div>
               <div className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span>Commercial digital rights license & invoice</span>
+                <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
+                <span>Commercial digital rights license & receipt</span>
               </div>
               <div className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-emerald-400 shrink-0" />
+                <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
                 <span>{theme.supportPeriod} included</span>
               </div>
               <div className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-emerald-400 shrink-0" />
+                <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
                 <span>Step-by-step setup documentation & guides</span>
               </div>
             </div>
@@ -240,34 +240,34 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 productSlug={theme.slug}
                 price={theme.price}
                 label={`Buy Now • ${theme.price}`}
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 px-6 py-4 shadow-xl"
+                className="w-full bg-[#ebebe6] hover:bg-white text-black px-6 py-4 rounded-full shadow-2xl font-bold text-xs uppercase tracking-widest cursor-pointer active:scale-98 transition-all"
               />
             </div>
 
             {/* Trust notice */}
-            <div className="text-[10px] text-neutral-500 text-center font-mono flex items-center justify-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+            <div className="text-[10px] text-[#ebebe6]/50 text-center font-mono flex items-center justify-center gap-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
               <span>Direct Instant Download • 256-bit SSL</span>
             </div>
           </div>
 
           {/* Quick specs grid */}
-          <div className="grid grid-cols-2 gap-4 text-xs bg-neutral-950 border border-neutral-800 rounded-xl p-4">
+          <div className="grid grid-cols-2 gap-4 text-xs bg-black/60 border border-white/10 rounded-2xl p-5 backdrop-blur-md">
             <div>
-              <span className="text-neutral-500 block font-medium">Developer</span>
-              <span className="text-neutral-200 font-semibold">{theme.author}</span>
+              <span className="text-[#ebebe6]/50 block font-medium">Developer</span>
+              <span className="text-[#ebebe6] font-semibold">{theme.author}</span>
             </div>
             <div>
-              <span className="text-neutral-500 block font-medium">Current Version</span>
-              <span className="text-neutral-200 font-mono font-semibold">v{theme.version}</span>
+              <span className="text-[#ebebe6]/50 block font-medium">Current Version</span>
+              <span className="text-[#ebebe6] font-mono font-semibold">v{theme.version}</span>
             </div>
             <div>
-              <span className="text-neutral-500 block font-medium">Released on</span>
-              <span className="text-neutral-200 font-semibold">{theme.releaseDate}</span>
+              <span className="text-[#ebebe6]/50 block font-medium">Released on</span>
+              <span className="text-[#ebebe6] font-semibold">{theme.releaseDate}</span>
             </div>
             <div>
-              <span className="text-neutral-500 block font-medium">Compatibility</span>
-              <span className="text-neutral-200 font-semibold">{theme.compatibility}</span>
+              <span className="text-[#ebebe6]/50 block font-medium">Compatibility</span>
+              <span className="text-[#ebebe6] font-semibold">{theme.compatibility}</span>
             </div>
           </div>
 
@@ -276,8 +276,8 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
       </div>
 
       {/* Tabs */}
-      <div className="border-t border-neutral-900 pt-10">
-        <div className="flex border-b border-neutral-800 mb-8 overflow-x-auto whitespace-nowrap gap-6 text-sm font-semibold">
+      <div className="border-t border-white/10 pt-10">
+        <div className="flex border-b border-white/10 mb-8 overflow-x-auto whitespace-nowrap gap-6 text-sm font-semibold">
           {[
             { id: 'features', label: 'Key Features' },
             { id: 'faq', label: isWebsite ? 'Template FAQ' : 'Theme FAQ' },
@@ -287,7 +287,7 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`pb-4 border-b-2 px-1 transition-colors hover:text-white cursor-pointer uppercase text-xs tracking-wider ${
-                activeTab === tab.id ? 'border-emerald-500 text-white font-bold' : 'border-transparent text-neutral-500'
+                activeTab === tab.id ? 'border-[#27FCF2] text-[#ebebe6] font-bold' : 'border-transparent text-[#ebebe6]/50'
               }`}
             >
               {tab.label}
@@ -300,9 +300,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
           {activeTab === 'features' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {theme.features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-neutral-900/20 border border-neutral-800 p-5 rounded-xl">
-                  <CheckCircle className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <p className="text-sm text-neutral-300 font-sans">{feature}</p>
+                <div key={idx} className="flex items-start gap-3 bg-black/60 border border-white/10 p-5 rounded-2xl backdrop-blur-md">
+                  <CheckCircle className="h-5 w-5 text-[#27FCF2] shrink-0 mt-0.5" />
+                  <p className="text-sm text-[#ebebe6]/80 font-sans">{feature}</p>
                 </div>
               ))}
             </div>
@@ -311,9 +311,9 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
           {activeTab === 'faq' && (
             <div className="space-y-4 max-w-3xl">
               {theme.faq.map((item, idx) => (
-                <div key={idx} className="border border-neutral-800 bg-neutral-900/10 rounded-xl p-5 space-y-2">
+                <div key={idx} className="border border-white/10 bg-black/60 rounded-2xl p-5 space-y-2 backdrop-blur-md">
                   <h4 className="text-sm font-bold text-white font-sans">{item.question}</h4>
-                  <p className="text-xs text-neutral-400 leading-relaxed font-sans text-justify">{item.answer}</p>
+                  <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">{item.answer}</p>
                 </div>
               ))}
             </div>
@@ -322,20 +322,20 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
           {activeTab === 'reviews' && (
             <div className="space-y-6">
               {theme.reviews.map((rev) => (
-                <div key={rev.id} className="border border-neutral-800/80 bg-neutral-900/10 p-6 rounded-xl space-y-3">
+                <div key={rev.id} className="border border-white/10 bg-black/60 p-6 rounded-2xl space-y-3 backdrop-blur-md">
                   <div className="flex justify-between items-start">
                     <div>
                       <span className="block text-sm font-bold text-white font-sans">{rev.userName}</span>
-                      <span className="text-[10px] text-emerald-400 font-mono italic">Store / Project: {rev.shopName}</span>
+                      <span className="text-[10px] text-[#27FCF2] font-mono italic">Store / Project: {rev.shopName}</span>
                     </div>
-                    <span className="text-[10px] text-neutral-500 font-medium">{rev.date}</span>
+                    <span className="text-[10px] text-[#ebebe6]/50 font-medium">{rev.date}</span>
                   </div>
-                  <div className="flex gap-1 text-amber-500 text-xs">
+                  <div className="flex gap-1 text-amber-400 text-xs">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-amber-500 text-amber-500" />
+                      <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-xs text-neutral-400 leading-relaxed font-sans text-justify">{rev.text}</p>
+                  <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">{rev.text}</p>
                 </div>
               ))}
             </div>
@@ -344,15 +344,15 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
       </div>
 
       {/* Help block */}
-      <div className="bg-gradient-to-r from-neutral-900/40 via-neutral-950 to-neutral-900/40 border border-neutral-850 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="bg-black/60 border border-white/10 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-xl">
         <div className="space-y-2">
-          <h3 className="text-lg font-bold text-white">Need setup guidance or technical documentation?</h3>
-          <p className="text-xs text-neutral-400 max-w-xl font-sans leading-relaxed text-left">
-            Read our step-by-step installation guides, check asset configuration tutorials, or contact our developer team at Croese for technical support.
+          <h3 className="text-xl font-normal text-[#ebebe6] font-memogram uppercase">Need setup guidance or technical documentation?</h3>
+          <p className="text-xs text-[#ebebe6]/70 max-w-xl font-sans leading-relaxed text-left">
+            Read our step-by-step installation guides, check asset configuration tutorials, or contact Ibrahim Ouedraogo at Croese for technical support.
           </p>
         </div>
         <div className="flex gap-4 shrink-0 text-xs font-bold">
-          <button onClick={() => onNavigate('/support')} className="text-emerald-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+          <button onClick={() => onNavigate('/support')} className="text-[#27FCF2] hover:underline inline-flex items-center gap-1 cursor-pointer font-mono">
             Explore Documentation <ChevronRight className="h-4 w-4" />
           </button>
         </div>

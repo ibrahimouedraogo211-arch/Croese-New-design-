@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { ShopifyTheme } from '../types';
-import { ArrowRight, Star, Cpu, ShoppingCart, Globe, Layout } from 'lucide-react';
+import { ArrowUpRight, Star, ShoppingBag, Globe, Layout } from 'lucide-react';
 
 interface ThemeCardProps {
   theme: ShopifyTheme;
@@ -21,86 +21,98 @@ export function ThemeCard({ theme, onViewDetails, onCheckout }: ThemeCardProps) 
   const isWebsite = theme.category === 'website';
 
   return (
-    <div 
+    <article 
       id={`product-card-${theme.slug}`} 
-      className="group relative bg-neutral-900/40 border border-neutral-800/80 rounded-2xl overflow-hidden hover:border-neutral-700/80 transition-all duration-300 flex flex-col hover:shadow-xl hover:shadow-black/40"
+      className="group relative rounded-3xl border border-white/10 bg-[#0d0d0c]/80 backdrop-blur-md overflow-hidden hover:border-white/25 transition-all duration-500 flex flex-col hover:shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
     >
-      {/* Cover Image Segment */}
+      {/* Cover Image Segment with Smooth Zoom */}
       <div 
-        className="relative aspect-[16/10] overflow-hidden bg-neutral-950 cursor-pointer" 
+        className="relative aspect-[16/10] overflow-hidden bg-black cursor-pointer" 
         onClick={() => onViewDetails(theme.slug)}
       >
         <img
           src={theme.coverImage}
-          alt={isWebsite ? `Aperçu du site ${theme.name}` : `Aperçu du thème Shopify ${theme.name}`}
+          alt={isWebsite ? `Preview of ${theme.name}` : `Shopify Theme ${theme.name}`}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
         />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-          <span className="text-xs bg-white text-neutral-900 font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1 uppercase tracking-wide">
-            View Details <ArrowRight className="h-3 w-3 text-neutral-900" />
+        {/* Subtle Dark Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0c] via-transparent to-transparent opacity-80" />
+
+        {/* Hover View Details Pill */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+          <span className="text-xs bg-[#ebebe6] text-black font-extrabold px-4 py-2 rounded-full flex items-center gap-1.5 uppercase tracking-wider shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            View Details <ArrowUpRight className="h-3.5 w-3.5 text-black" />
           </span>
         </div>
 
-        {/* Category & Tech Badges */}
-        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-          <span className="text-[10px] font-mono font-bold bg-neutral-950/90 text-emerald-400 border border-neutral-800 px-2.5 py-1 rounded-md backdrop-blur-md flex items-center gap-1">
-            {isWebsite ? <Globe className="h-3 w-3" /> : <Layout className="h-3 w-3" />}
-            {theme.categoryLabel || (isWebsite ? 'Website Template' : 'Shopify 2.0')}
+        {/* Category & Tag Badges */}
+        <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+          <span className="text-[10px] font-mono font-bold bg-black/80 text-[#ebebe6] border border-white/15 px-3 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+            {isWebsite ? <Globe className="h-3 w-3 text-[#27FCF2]" /> : <Layout className="h-3 w-3 text-[#27FCF2]" />}
+            {theme.categoryLabel || (isWebsite ? 'Production Website' : 'Shopify 2.0')}
           </span>
         </div>
       </div>
 
       {/* Main Content Info */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
-        <div className="space-y-2">
+      <div className="p-6 md:p-7 flex-1 flex flex-col justify-between space-y-6">
+        <div className="space-y-3">
           
           {/* Header row: title and reviews rating */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between gap-2">
             <h3 
-              className="text-lg font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors cursor-pointer" 
+              className="text-2xl font-normal text-[#ebebe6] tracking-tight group-hover:text-[#27FCF2] transition-colors cursor-pointer font-memogram" 
               onClick={() => onViewDetails(theme.slug)}
             >
-              {theme.name} {isWebsite ? 'Site' : 'Theme'}
+              {theme.name}
             </h3>
-            <div className="flex items-center gap-1 text-amber-500 text-xs font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/10">
-              <Star className="h-3.5 w-3.5 fill-amber-500" />
+            <div className="flex items-center gap-1 text-amber-400 text-xs font-semibold bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20 shrink-0">
+              <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
               <span>{avgRating}</span>
             </div>
           </div>
           
-          <p className="text-xs text-emerald-400/90 font-medium font-sans italic">
+          <p className="text-xs text-[#27FCF2] font-medium tracking-wide">
             {theme.tagline}
           </p>
 
-          <p className="text-xs text-neutral-400 leading-relaxed font-sans line-clamp-2">
+          <p className="text-xs text-[#ebebe6]/70 leading-relaxed line-clamp-2 font-sans">
             {theme.description}
           </p>
         </div>
 
-        {/* Purchase & Pricing */}
-        <div className="mt-6 pt-4 border-t border-neutral-800/80 flex items-center justify-between">
+        {/* Purchase & Pricing Bar */}
+        <div className="pt-5 border-t border-white/10 flex items-center justify-between gap-4">
           <div className="flex flex-col">
-            <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">
-              Instant Download
+            <span className="text-[10px] text-[#ebebe6]/50 uppercase tracking-widest font-mono font-medium">
+              Commercial License
             </span>
-            <span className="text-xl font-extrabold text-white font-mono">
+            <span className="text-2xl font-bold text-[#ebebe6] font-mono">
               {theme.price}
             </span>
           </div>
           
-          <button
-            onClick={() => onCheckout(theme.slug)}
-            className="px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-emerald-500 hover:bg-emerald-400 text-neutral-950 transition-all flex items-center gap-1.5 cursor-pointer shadow-md shadow-emerald-500/10 active:scale-95 duration-100"
-          >
-            <ShoppingCart className="h-3.5 w-3.5 text-neutral-950" />
-            Buy Now
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => onViewDetails(theme.slug)}
+              className="px-3.5 py-2 rounded-full font-medium text-xs text-[#ebebe6]/80 hover:text-white hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
+            >
+              Details
+            </button>
+            <button
+              onClick={() => onCheckout(theme.slug)}
+              className="px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider bg-[#ebebe6] text-black hover:bg-white transition-all flex items-center gap-1.5 cursor-pointer shadow-lg active:scale-95 duration-150"
+            >
+              <ShoppingBag className="h-3.5 w-3.5 text-black" />
+              Buy
+            </button>
+          </div>
         </div>
 
       </div>
 
-    </div>
+    </article>
   );
 }

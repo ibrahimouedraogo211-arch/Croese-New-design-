@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { ShoppingBag, Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageSquare, ShoppingBag } from 'lucide-react';
 
 interface HeaderProps {
   currentPath: string;
@@ -15,8 +15,9 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: 'Catalog', path: '/themes' },
-    { label: 'About', path: '/about' },
+    { label: 'Themes', path: '/themes' },
+    { label: 'Websites', path: '/websites' },
+    { label: 'About Croese', path: '/about' },
     { label: 'Installation', path: '/support' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact', path: '/contact' },
@@ -29,94 +30,174 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
   };
 
   return (
-    <nav id="app-header" className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-900/60 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2.5 cursor-pointer" onClick={() => handleNavClick('/')}>
-            <div className="h-10 w-10 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <ShoppingBag className="h-5 w-5 text-neutral-950" />
-            </div>
-            <div>
-              <span className="font-sans font-extrabold text-lg tracking-wide bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent uppercase">
-                CROESE
-              </span>
-              <span className="block text-[8px] tracking-widest text-emerald-400 uppercase font-mono font-bold">
-                Shopify Themes & Websites
-              </span>
-            </div>
-          </div>
+    <>
+      {/* Top Announcement Ticker Bar (Creativeans signature ticker format) */}
+      <div className="relative z-40 overflow-hidden bg-[#0a0a0a]/90 border-b border-white/10 py-2 backdrop-blur-md text-[11px] tracking-wide text-[#ebebe6]/80 select-none">
+        <div className="animate-marquee flex items-center whitespace-nowrap gap-12">
+          <span className="flex items-center gap-2.5">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#27FCF2] animate-pulse" />
+            <span className="font-medium text-[#ebebe6]">Croese Flagship Commerce • Certified Shopify 2.0 Themes & Production Websites</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span>Instant Digital ZIP Delivery with Lifetime Commercial Rights</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#27FCF2]" />
+            <span className="text-[#27FCF2] font-semibold">Sub-Second Liquid Runtime • 100% Core Web Vitals Score</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span>Direct Concierge Support by Ibrahim Ouedraogo • 24h Turnaround</span>
+          </span>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.path}
-                onClick={() => handleNavClick(item.path)}
-                className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-emerald-400 py-1 border-b-2 ${
-                  currentPath === item.path || (item.path === '/themes' && currentPath.startsWith('/themes/'))
-                    ? 'border-emerald-500 text-white'
-                    : 'border-transparent text-neutral-400'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <button
-              onClick={() => handleNavClick('/themes')}
-              className="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-white text-neutral-950 hover:bg-neutral-100 transition-all shadow-md active:scale-95 duration-100 flex items-center gap-1.5"
-            >
-              <Sparkles className="h-3.5 w-3.5 text-neutral-950" />
-              Explore Catalog
-            </button>
-          </div>
-
-          {/* Mobile hamburger button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-neutral-400 hover:text-white p-2 focus:outline-none"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-
+          {/* Duplicate set for seamless continuous marquee loop */}
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2.5">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#27FCF2] animate-pulse" />
+            <span className="font-medium text-[#ebebe6]">Croese Flagship Commerce • Certified Shopify 2.0 Themes & Production Websites</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span>Instant Digital ZIP Delivery with Lifetime Commercial Rights</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#27FCF2]" />
+            <span className="text-[#27FCF2] font-semibold">Sub-Second Liquid Runtime • 100% Core Web Vitals Score</span>
+          </span>
+          <span className="text-white/20">•</span>
+          <span className="flex items-center gap-2">
+            <span>Direct Concierge Support by Ibrahim Ouedraogo • 24h Turnaround</span>
+          </span>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-b border-neutral-900 bg-neutral-950 divide-y divide-neutral-900 transition-all duration-300">
-          <div className="px-2 pt-2 pb-4 space-y-1">
-            {menuItems.map((item) => (
-              <button
-                key={item.path}
-                onClick={() => handleNavClick(item.path)}
-                className={`block w-full text-left px-4 py-3 text-sm font-bold uppercase tracking-wide rounded-xl ${
-                  currentPath === item.path
-                    ? 'bg-neutral-900 text-emerald-400 border-l-4 border-emerald-500'
-                    : 'text-neutral-300 hover:bg-neutral-900/60'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+      {/* Floating Pill Navigation Header */}
+      <header className="sticky top-4 z-50 px-4 pointer-events-none transition-all duration-300">
+        <div className="max-w-6xl mx-auto pointer-events-auto rounded-full border border-white/15 bg-black/85 px-4 sm:px-6 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-all duration-300 hover:border-white/25 flex items-center justify-between">
+          
+          {/* Left: 3D C Logo + Wordmark */}
+          <div 
+            id="brand-logo-container"
+            className="flex items-center gap-3 cursor-pointer group select-none" 
+            onClick={() => handleNavClick('/')}
+          >
+            <div className="relative flex items-center justify-center">
+              <img 
+                src="/c_logo.svg" 
+                alt="Croese C Logo" 
+                className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
+              />
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="font-memogram text-xl sm:text-2xl font-normal tracking-wider text-[#ebebe6] uppercase transition-colors group-hover:text-white">
+                Croese
+              </span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#27FCF2] font-semibold border-l border-white/20 pl-2 hidden sm:inline-block">
+                Studio
+              </span>
+            </div>
           </div>
-          <div className="px-4 py-4">
+
+          {/* Center: Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
+            {menuItems.map((item) => {
+              const isActive = currentPath === item.path || 
+                (item.path === '/themes' && currentPath.startsWith('/themes/')) ||
+                (item.path === '/websites' && currentPath === '/websites');
+
+              return (
+                <button
+                  key={item.path}
+                  onClick={() => handleNavClick(item.path)}
+                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'text-white bg-white/10 shadow-inner'
+                      : 'text-[#ebebe6]/70 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-[#27FCF2] rounded-full" />
+                  )}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Right: Actions & CTA */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              onClick={() => handleNavClick('/contact')}
+              aria-label="Contact Studio"
+              className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-[#ebebe6]/80 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-all cursor-pointer"
+            >
+              <MessageSquare className="w-3.5 h-3.5 text-[#27FCF2]" />
+              <span>Contact</span>
+            </button>
+
             <button
               onClick={() => handleNavClick('/themes')}
-              className="w-full text-center px-5 py-3 rounded-xl font-bold uppercase tracking-wider text-xs bg-emerald-500 text-neutral-950 hover:bg-emerald-400 transition-all"
+              className="group relative inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full font-bold text-xs tracking-wider uppercase bg-[#ebebe6] text-black hover:bg-white transition-all shadow-[0_0_20px_rgba(235,235,230,0.2)] active:scale-95 duration-150 cursor-pointer"
             >
-              Explore Catalog
+              <ShoppingBag className="w-3.5 h-3.5 text-black" />
+              <span>Catalog</span>
+              <ArrowUpRight className="w-3 h-3 text-black transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-[#ebebe6] hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
+
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Dropdown Panel */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-3 max-w-6xl mx-auto pointer-events-auto rounded-3xl border border-white/15 bg-black/95 p-6 shadow-2xl backdrop-blur-2xl animate-scale-up space-y-4">
+            <div className="grid grid-cols-1 gap-2">
+              {menuItems.map((item) => (
+                <button
+                  key={item.path}
+                  onClick={() => handleNavClick(item.path)}
+                  className={`text-left px-4 py-3 rounded-2xl text-sm font-semibold transition-colors cursor-pointer ${
+                    currentPath === item.path
+                      ? 'bg-white/10 text-white border border-white/15'
+                      : 'text-[#ebebe6]/70 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
+              <button
+                onClick={() => handleNavClick('/contact')}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-full border border-white/15 text-xs uppercase font-bold text-[#ebebe6] hover:bg-white/5 cursor-pointer"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-[#27FCF2]" />
+                <span>Contact Studio</span>
+              </button>
+              <button
+                onClick={() => handleNavClick('/themes')}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#ebebe6] text-black text-xs uppercase font-bold hover:bg-white cursor-pointer"
+              >
+                <ShoppingBag className="w-3.5 h-3.5 text-black" />
+                <span>Browse All Themes & Websites</span>
+              </button>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

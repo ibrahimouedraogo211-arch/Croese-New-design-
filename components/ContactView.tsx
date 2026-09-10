@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle, Clock, ShieldAlert } from 'lucide-react';
+import { Mail, Send, CheckCircle, Clock, ShieldAlert, Sparkles, MessageSquare } from 'lucide-react';
 
 export function ContactView() {
   const [formData, setFormData] = useState({
@@ -22,27 +22,27 @@ export function ContactView() {
     
     setLoading(true);
     
-    // Simulating message transmitting
+    // Simulate sending message
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: 'general', message: '' });
-    }, 1200);
+    }, 1000);
   };
 
   return (
-    <div id="contact-view" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div id="contact-view" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 relative z-10">
       
       {/* Page Header */}
       <div className="space-y-4 text-center max-w-2xl mx-auto">
-        <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
-          Support Desk
+        <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-bold">
+          Direct Concierge Desk
         </span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          How can we assist you today?
+        <h1 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight leading-tight uppercase font-memogram">
+          Contact Croese Studio
         </h1>
-        <p className="text-neutral-400 text-sm leading-relaxed font-sans">
-          Our technical engineering desk assists with all integration questions, zip validation, license registration, and direct checkout fulfillment.
+        <p className="text-[#ebebe6]/70 text-sm leading-relaxed font-sans">
+          Have questions about theme compatibility, custom store modifications, license verification, or instant download access? Ibrahim Ouedraogo is here to help.
         </p>
       </div>
 
@@ -52,148 +52,141 @@ export function ContactView() {
         <div className="md:col-span-12 lg:col-span-5 space-y-6">
           
           {/* Card 1: Official Email */}
-          <div className="bg-neutral-900/60 border border-neutral-800 p-6 rounded-2xl space-y-3">
-            <div className="h-9 w-9 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center">
+          <div className="bg-black/60 border border-white/15 p-6 rounded-3xl space-y-3 backdrop-blur-xl">
+            <div className="h-10 w-10 bg-white/5 text-[#27FCF2] border border-white/10 rounded-2xl flex items-center justify-center">
               <Mail className="h-5 w-5" />
             </div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Direct Email Address</h3>
-            <p className="text-xs text-neutral-450 font-sans leading-relaxed text-justify">
-              For immediate technical consultation, affiliation requests, or custom agency quotas, secure an email directory thread with:
+            <h3 className="text-sm font-normal text-[#ebebe6] uppercase tracking-wider font-memogram">Direct Studio Email</h3>
+            <p className="text-xs text-[#ebebe6]/60 font-sans leading-relaxed">
+              Send us inquiries regarding product licenses, technical guidance, or custom theme modifications:
             </p>
             <a 
               href="mailto:ibraoued14@gmail.com" 
-              className="block select-all text-xs font-bold font-mono text-emerald-400 bg-neutral-950 border border-neutral-800 py-3 px-3 rounded-lg hover:underline transition-all text-center"
+              className="text-[#27FCF2] hover:underline font-mono text-sm block font-semibold pt-1"
             >
               ibraoued14@gmail.com
             </a>
           </div>
 
-          {/* Card 2: Support SLA timeline */}
-          <div className="bg-neutral-900/40 border border-[#242424] p-6 rounded-2xl space-y-3">
-            <div className="h-9 w-9 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center">
+          {/* Card 2: Turnaround Hours */}
+          <div className="bg-black/60 border border-white/15 p-6 rounded-3xl space-y-3 backdrop-blur-xl">
+            <div className="h-10 w-10 bg-white/5 text-[#27FCF2] border border-white/10 rounded-2xl flex items-center justify-center">
               <Clock className="h-5 w-5" />
             </div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Turnaround Time</h3>
-            <p className="text-xs text-neutral-450 font-sans leading-relaxed text-justify">
-              Our specialists review all requests and dispatch solutions inside <strong className="text-white">24 business hours</strong>, Monday through Friday. Support tickets referencing a validated order transaction receive priority routing.
+            <h3 className="text-sm font-normal text-[#ebebe6] uppercase tracking-wider font-memogram">Turnaround SLA</h3>
+            <p className="text-xs text-[#ebebe6]/60 font-sans leading-relaxed">
+              All merchant support requests receive personal attention from Ibrahim Ouedraogo within 24 hours (Monday to Friday).
             </p>
           </div>
 
-          {/* Card 3: Billing statement */}
-          <div className="bg-neutral-900/20 border border-neutral-800 p-6 rounded-2xl space-y-2">
-            <div className="flex items-center gap-1.5 text-xs text-neutral-300 font-bold">
-              <ShieldAlert className="h-4 w-4 text-emerald-400" />
-              <span>Invoicing & Order Inquiries</span>
+          {/* Card 3: Instant Access Guarantee */}
+          <div className="bg-black/60 border border-white/15 p-6 rounded-3xl space-y-3 backdrop-blur-xl">
+            <div className="h-10 w-10 bg-white/5 text-[#27FCF2] border border-white/10 rounded-2xl flex items-center justify-center">
+              <Sparkles className="h-5 w-5" />
             </div>
-            <p className="text-[10px] text-neutral-400 leading-normal font-sans text-justify">
-              If your request relates to billing inquiries, local VAT/tax invoices, or payment receipts, provide your order email or transaction reference for immediate assistance.
+            <h3 className="text-sm font-normal text-[#ebebe6] uppercase tracking-wider font-memogram">Instant ZIP Delivery</h3>
+            <p className="text-xs text-[#ebebe6]/60 font-sans leading-relaxed">
+              Theme source code archives are delivered immediately via email upon checkout completion.
             </p>
           </div>
 
         </div>
 
-        {/* Right pane: Interactive Contact Form (7/12) */}
-        <div className="md:col-span-12 lg:col-span-7 bg-neutral-900/45 border border-neutral-800/80 p-8 rounded-2xl">
-          
+        {/* Right pane form (7/12) */}
+        <div className="md:col-span-12 lg:col-span-7 bg-black/60 border border-white/15 p-8 rounded-3xl space-y-6 backdrop-blur-xl shadow-2xl">
+          <h2 className="text-lg font-normal text-[#ebebe6] uppercase tracking-wider font-memogram pb-3 border-b border-white/10 flex items-center gap-2">
+            <MessageSquare className="w-4 h-4 text-[#27FCF2]" />
+            <span>Send Direct Message</span>
+          </h2>
+
           {submitted ? (
-            <div className="text-center py-10 space-y-4">
-              <div className="mx-auto h-12 w-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center font-sans">
-                <CheckCircle className="h-6 w-6 animate-pulse" />
-              </div>
-              <h3 className="text-xl font-bold text-white tracking-tight">Your inquiry was submitted!</h3>
-              <p className="text-xs text-neutral-400 max-w-sm mx-auto leading-relaxed font-sans">
-                An integration expert from Croese will follow up via email within 24 business hours. Please check your spam inbox if you don't hear back soon.
+            <div className="bg-white/5 border border-[#27FCF2]/30 p-8 rounded-2xl text-center space-y-3">
+              <CheckCircle className="h-10 w-10 text-[#27FCF2] mx-auto" />
+              <h3 className="text-sm font-bold text-[#ebebe6] uppercase tracking-wider">Message Transmitted</h3>
+              <p className="text-xs text-[#ebebe6]/70 leading-relaxed max-w-sm mx-auto">
+                Thank you. Your message has been routed directly to Ibrahim Ouedraogo. We will reply to your provided email address shortly.
               </p>
               <button 
                 onClick={() => setSubmitted(false)}
-                className="mt-4 px-4 py-2 border border-neutral-850 text-neutral-300 hover:text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                className="mt-4 text-xs text-[#27FCF2] underline cursor-pointer"
               >
-                Send another message
+                Send another dispatch
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">
-                    Your Name or Company Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Marcus Dupond"
-                    className="w-full bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-600 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 transition-colors font-sans"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="marcus@example.com"
-                    className="w-full bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-600 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 transition-colors font-sans"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">
-                  Subject *
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-1.5">
+                <label className="text-xs font-mono font-medium text-[#ebebe6]/70 uppercase tracking-wider">
+                  Your Name
                 </label>
-                <select
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 transition-colors font-sans"
-                >
-                  <option value="general">Pre-sales Consultation / General Question</option>
-                  <option value="theme_help">Shopify theme installation aid</option>
-                  <option value="licence">License verification code issue</option>
-                  <option value="partnership">Agency licensing agreements</option>
-                  <option value="other">Administrative / Invoice issues</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">
-                  Detailed Details *
-                </label>
-                <textarea
+                <input
+                  type="text"
                   required
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your brand website or question with details..."
-                  className="w-full bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-600 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 transition-colors font-sans resize-none"
+                  value={formData.name}
+                  onChange={e => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="e.g. Camilla Vance"
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#27FCF2] text-[#ebebe6] px-4 py-3 rounded-2xl text-xs outline-none transition-colors"
                 />
               </div>
 
-              <div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-neutral-950 rounded-xl text-xs uppercase tracking-wider font-extrabold flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg shadow-emerald-500/10"
-                >
-                  {loading ? (
-                    <>
-                      <span className="h-4 w-4 animate-spin border-2 border-neutral-950 border-t-transparent rounded-full" />
-                      <span>Sending inquiry...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4 text-neutral-950" />
-                      <span>Submit Request</span>
-                    </>
-                  )}
-                </button>
+              <div className="space-y-1.5">
+                <label className="text-xs font-mono font-medium text-[#ebebe6]/70 uppercase tracking-wider">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={e => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="name@store.com"
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#27FCF2] text-[#ebebe6] px-4 py-3 rounded-2xl text-xs outline-none transition-colors"
+                />
               </div>
 
+              <div className="space-y-1.5">
+                <label className="text-xs font-mono font-medium text-[#ebebe6]/70 uppercase tracking-wider">
+                  Inquiry Topic
+                </label>
+                <select
+                  value={formData.subject}
+                  onChange={e => setFormData({ ...formData, subject: e.target.value })}
+                  className="w-full bg-[#121212] border border-white/15 focus:border-[#27FCF2] text-[#ebebe6] px-4 py-3 rounded-2xl text-xs outline-none transition-colors cursor-pointer"
+                >
+                  <option value="general">Theme Selection & Compatibility Advice</option>
+                  <option value="customization">Custom Shopify Store Setup</option>
+                  <option value="technical">Installation Assistance & Liquid Questions</option>
+                  <option value="license">Commercial Licensing & Enterprise Rights</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-mono font-medium text-[#ebebe6]/70 uppercase tracking-wider">
+                  Message Details
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  value={formData.message}
+                  onChange={e => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Tell us about your brand, store requirements, or questions..."
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#27FCF2] text-[#ebebe6] px-4 py-3 rounded-2xl text-xs outline-none transition-colors resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#ebebe6] text-black hover:bg-white font-bold text-xs uppercase tracking-widest py-3.5 rounded-full flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg disabled:opacity-50"
+              >
+                {loading ? (
+                  <span>Transmitting...</span>
+                ) : (
+                  <>
+                    <Send className="h-3.5 w-3.5" />
+                    <span>Send Message to Studio</span>
+                  </>
+                )}
+              </button>
             </form>
           )}
 

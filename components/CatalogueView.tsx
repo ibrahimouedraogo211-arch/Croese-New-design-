@@ -36,35 +36,32 @@ export function CatalogueView({ themes, onNavigate, onCheckout, initialCategory 
     return true;
   });
 
-  const shopifyCount = themes.filter(t => !t.category || t.category === 'shopify').length;
-  const websiteCount = themes.filter(t => t.category === 'website').length;
-
   return (
-    <div id="catalogue-view" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div id="catalogue-view" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 relative z-10">
       
       {/* Page Header */}
       <div className="space-y-4 text-center max-w-3xl mx-auto">
-        <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold flex items-center justify-center gap-1.5">
+        <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-bold flex items-center justify-center gap-1.5">
           <Sparkles className="h-3.5 w-3.5" />
-          Digital Product Catalog • Instant Digital Delivery
+          Croese Product Catalog • Instant Digital Delivery
         </span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight leading-tight uppercase font-memogram">
           Shopify Themes & Production Websites
         </h1>
-        <p className="text-sm text-neutral-400 leading-relaxed font-sans">
+        <p className="text-sm text-[#ebebe6]/70 leading-relaxed font-sans">
           Engineered for peak performance, ultra-fast conversions, and seamless deployment. Buy directly with instant digital download and commercial licensing.
         </p>
       </div>
 
       {/* Main Category Tabs */}
       <div className="flex items-center justify-center">
-        <div className="inline-flex p-1.5 rounded-2xl bg-neutral-900/90 border border-neutral-800 shadow-inner max-w-full overflow-x-auto">
+        <div className="inline-flex p-1.5 rounded-full bg-black/80 border border-white/15 shadow-2xl backdrop-blur-xl max-w-full overflow-x-auto">
           <button
             onClick={() => { setSelectedCategory('all'); setFilter('all'); }}
-            className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+            className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               selectedCategory === 'all'
-                ? 'bg-emerald-500 text-neutral-950 shadow-md shadow-emerald-500/20'
-                : 'text-neutral-400 hover:text-white hover:bg-neutral-800/50'
+                ? 'bg-[#ebebe6] text-black shadow-md'
+                : 'text-[#ebebe6]/60 hover:text-white hover:bg-white/5'
             }`}
           >
             <span>All Products</span>
@@ -72,22 +69,22 @@ export function CatalogueView({ themes, onNavigate, onCheckout, initialCategory 
 
           <button
             onClick={() => { setSelectedCategory('shopify'); setFilter('all'); }}
-            className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+            className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               selectedCategory === 'shopify'
-                ? 'bg-emerald-500 text-neutral-950 shadow-md shadow-emerald-500/20'
-                : 'text-neutral-400 hover:text-white hover:bg-neutral-800/50'
+                ? 'bg-[#ebebe6] text-black shadow-md'
+                : 'text-[#ebebe6]/60 hover:text-white hover:bg-white/5'
             }`}
           >
             <Layout className="h-3.5 w-3.5" />
-            <span>Shopify Themes</span>
+            <span>Shopify 2.0</span>
           </button>
 
           <button
             onClick={() => { setSelectedCategory('website'); setFilter('all'); }}
-            className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+            className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               selectedCategory === 'website'
-                ? 'bg-emerald-500 text-neutral-950 shadow-md shadow-emerald-500/20'
-                : 'text-neutral-400 hover:text-white hover:bg-neutral-800/50'
+                ? 'bg-[#ebebe6] text-black shadow-md'
+                : 'text-[#ebebe6]/60 hover:text-white hover:bg-white/5'
             }`}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -97,9 +94,9 @@ export function CatalogueView({ themes, onNavigate, onCheckout, initialCategory 
       </div>
 
       {/* Sub-filter Toolbar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-y border-neutral-900 py-6">
-        <div className="flex items-center gap-2 text-neutral-300 text-xs font-bold uppercase tracking-wider">
-          <Sliders className="h-4 w-4 text-emerald-400" />
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-y border-white/10 py-6">
+        <div className="flex items-center gap-2 text-[#ebebe6] text-xs font-bold uppercase tracking-wider font-mono">
+          <Sliders className="h-4 w-4 text-[#27FCF2]" />
           <span>Curated Filters:</span>
         </div>
         
@@ -119,10 +116,10 @@ export function CatalogueView({ themes, onNavigate, onCheckout, initialCategory 
             <button
               key={btn.id}
               onClick={() => setFilter(btn.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors border ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors border ${
                 filter === btn.id
-                  ? 'bg-white text-neutral-950 border-white font-bold'
-                  : 'bg-neutral-900 text-neutral-400 border-neutral-800 hover:text-white'
+                  ? 'bg-[#ebebe6] text-black border-[#ebebe6] font-bold'
+                  : 'bg-white/5 text-[#ebebe6]/70 border-white/10 hover:text-white hover:border-white/25'
               }`}
             >
               {btn.label}
@@ -144,44 +141,44 @@ export function CatalogueView({ themes, onNavigate, onCheckout, initialCategory 
       </div>
 
       {filteredThemes.length === 0 && (
-        <div className="text-center py-16 border border-dashed border-neutral-800 rounded-2xl">
-          <p className="text-sm text-neutral-400">No template matches the selected filter.</p>
+        <div className="text-center py-16 border border-dashed border-white/10 rounded-3xl">
+          <p className="text-sm text-[#ebebe6]/60">No template matches the selected filter.</p>
         </div>
       )}
 
       {/* Trust guarantees bar */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-neutral-900/20 border border-neutral-900 rounded-2xl p-6 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-black/60 border border-white/10 rounded-3xl p-8 mt-16 backdrop-blur-xl">
         <div className="flex items-start gap-3">
-          <div className="h-8 w-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 border border-emerald-500/20">
+          <div className="h-9 w-9 rounded-2xl bg-white/5 text-[#27FCF2] flex items-center justify-center font-bold text-xs shrink-0 border border-white/10">
             <Download className="h-4 w-4" />
           </div>
           <div className="space-y-1">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Instant Digital Download</h4>
-            <p className="text-[11px] text-neutral-400 leading-relaxed font-sans">
+            <p className="text-[11px] text-[#ebebe6]/60 leading-relaxed font-sans">
               Instant access to your production ZIP package immediately after checkout. Zero waiting time.
             </p>
           </div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="h-8 w-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 border border-emerald-500/20">
+          <div className="h-9 w-9 rounded-2xl bg-white/5 text-[#27FCF2] flex items-center justify-center font-bold text-xs shrink-0 border border-white/10">
             <ShieldCheck className="h-4 w-4" />
           </div>
           <div className="space-y-1">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Commercial Digital License</h4>
-            <p className="text-[11px] text-neutral-400 leading-relaxed font-sans">
+            <p className="text-[11px] text-[#ebebe6]/60 leading-relaxed font-sans">
               Deploy freely for your commercial brand or client website with lifetime rights and verifiable license token.
             </p>
           </div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="h-8 w-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 border border-emerald-500/20">
+          <div className="h-9 w-9 rounded-2xl bg-white/5 text-[#27FCF2] flex items-center justify-center font-bold text-xs shrink-0 border border-white/10">
             <Zap className="h-4 w-4" />
           </div>
           <div className="space-y-1">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">30 Days Technical Support</h4>
-            <p className="text-[11px] text-neutral-400 leading-relaxed font-sans">
+            <p className="text-[11px] text-[#ebebe6]/60 leading-relaxed font-sans">
               All themes and websites include 30 days of dedicated developer technical support and installation guidance.
             </p>
           </div>
