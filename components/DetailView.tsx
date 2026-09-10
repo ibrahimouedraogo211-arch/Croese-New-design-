@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { ShopifyTheme } from '../types';
 import { CheckoutButton } from './CheckoutButton';
-import { BadgeCheck, ArrowLeft, Star, CheckCircle, ChevronRight, ExternalLink, ShieldCheck, Download, Code2, Globe, Play } from 'lucide-react';
+import { BadgeCheck, ArrowLeft, Star, CheckCircle, ChevronRight, ExternalLink, ShieldCheck, Download, Code2, Globe, Play, Sparkles, Palette, Layers, ShoppingBag } from 'lucide-react';
 
 interface DetailViewProps {
   theme: ShopifyTheme;
@@ -15,7 +15,7 @@ interface DetailViewProps {
 
 export function DetailView({ theme, onNavigate }: DetailViewProps) {
   const [activeImage, setActiveImage] = useState(theme.images[0] || theme.coverImage);
-  const [activeTab, setActiveTab] = useState<'features' | 'faq' | 'reviews'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'rebrand' | 'faq' | 'reviews'>('features');
 
   // Calculates reviews average rating
   const avgRating = theme.reviews.length > 0
@@ -185,6 +185,10 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
             <div className="space-y-2.5 text-xs text-[#ebebe6]/70 font-sans">
               <div className="flex items-center gap-2">
                 <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
+                <span className="font-semibold text-white">100% White-Label : Votre logo, couleurs & domaine</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
                 <span>Instant ready-to-deploy ZIP archive download</span>
               </div>
               <div className="flex items-center gap-2">
@@ -199,6 +203,19 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 <BadgeCheck className="h-4 w-4 text-[#27FCF2] shrink-0" />
                 <span>Step-by-step setup documentation & guides</span>
               </div>
+            </div>
+
+            {/* 100% Brand Customization Highlight */}
+            <div className="rounded-2xl border border-[#27FCF2]/30 bg-[#27FCF2]/10 p-4 space-y-1.5">
+              <div className="flex items-center gap-1.5 text-[#27FCF2] font-semibold text-xs font-mono uppercase tracking-wider">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>100% Personnalisable à Votre Marque</span>
+              </div>
+              <p className="text-[11px] text-[#ebebe6]/85 leading-relaxed font-sans">
+                {isWebsite
+                  ? "Après achat, adaptez entièrement ce site à votre identité : intégrez votre logo, vos couleurs, vos typographies et vos médias. Code source React/Tailwind complet et documenté."
+                  : "Après achat, adaptez entièrement ce thème à votre identité : insérez votre propre logo, vos couleurs et vos produits. Tout se configure simplement via l'éditeur visuel natif de Shopify, sans toucher au code."}
+              </p>
             </div>
 
             <div className="pt-2">
@@ -247,6 +264,7 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
         <div className="flex border-b border-white/10 mb-8 overflow-x-auto whitespace-nowrap gap-6 text-sm font-semibold">
           {[
             { id: 'features', label: 'Key Features' },
+            { id: 'rebrand', label: '100% À Votre Marque' },
             { id: 'faq', label: isWebsite ? 'Template FAQ' : 'Theme FAQ' },
             { id: 'reviews', label: 'Verified Reviews' }
           ].map((tab) => (
@@ -272,6 +290,59 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                   <p className="text-sm text-[#ebebe6]/80 font-sans">{feature}</p>
                 </div>
               ))}
+            </div>
+          )}
+
+          {activeTab === 'rebrand' && (
+            <div className="space-y-8 max-w-4xl">
+              <div className="rounded-3xl border border-[#27FCF2]/30 bg-[#27FCF2]/5 p-6 md:p-8 space-y-3 backdrop-blur-md">
+                <div className="flex items-center gap-2 text-[#27FCF2] font-mono text-xs uppercase font-bold tracking-wider">
+                  <Sparkles className="w-4 h-4 text-[#27FCF2]" />
+                  <span>Liberté Totale de Marque Blanche (White-Label)</span>
+                </div>
+                <h3 className="text-2xl font-normal text-[#ebebe6] font-memogram tracking-tight uppercase">
+                  Mettez ce {isWebsite ? 'site' : 'thème'} à votre image en 3 étapes simples
+                </h3>
+                <p className="text-sm text-[#ebebe6]/80 font-sans leading-relaxed">
+                  Le contenu de démonstration ne sert qu'à illustrer le potentiel esthétique et fonctionnel. Après votre achat, chaque pixel, image, texte et produit est 100% remplaçable par votre propre identité d'entreprise.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="rounded-2xl border border-white/10 bg-black/60 p-6 space-y-4 backdrop-blur-md">
+                  <div className="w-10 h-10 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                    <Palette className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base font-bold text-[#ebebe6] font-sans">1. Logo & Charte Graphique</h4>
+                  <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                    {isWebsite
+                      ? "Modifiez le logo vectoriel, vos codes hexadécimaux et vos polices de caractères directement dans le fichier de tokens Tailwind CSS."
+                      : "Insérez votre logo, définissez vos polices de marque et appliquez votre palette de couleurs directement dans les Paramètres de Thème de Shopify en un clic."}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-black/60 p-6 space-y-4 backdrop-blur-md">
+                  <div className="w-10 h-10 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                    <ShoppingBag className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base font-bold text-[#ebebe6] font-sans">2. Produits & Contenus</h4>
+                  <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                    {isWebsite
+                      ? "Remplacez les textes d'accroche, insérez vos propres photographies ou vidéos et personnalisez les composants modulaires React."
+                      : "Connectez votre catalogue de produits existant, glissez-déposez vos sections de mise en avant et ajoutez vos bannières vidéos via l'éditeur visuel sans coder."}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-black/60 p-6 space-y-4 backdrop-blur-md">
+                  <div className="w-10 h-10 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base font-bold text-[#ebebe6] font-sans">3. Domaine & Pleine Propriété</h4>
+                  <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                    Publiez sur votre propre nom de domaine. Aucun filigrane tiers, aucun logo Croese imposé, et aucune redevance sur vos ventes. Le store vous appartient à 100%.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
 

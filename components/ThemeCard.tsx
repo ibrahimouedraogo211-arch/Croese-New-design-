@@ -53,6 +53,9 @@ export function ThemeCard({ theme, onViewDetails, onCheckout }: ThemeCardProps) 
             {isWebsite ? <Globe className="h-3 w-3 text-[#27FCF2]" /> : <Layout className="h-3 w-3 text-[#27FCF2]" />}
             {theme.categoryLabel || (isWebsite ? 'Production Website' : 'Shopify 2.0')}
           </span>
+          <span className="text-[10px] font-mono font-semibold bg-[#27FCF2]/15 text-[#27FCF2] border border-[#27FCF2]/30 px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+            100% Personnalisable à votre marque
+          </span>
         </div>
       </div>
 

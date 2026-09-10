@@ -18,7 +18,9 @@ import {
   Layers, 
   Cpu, 
   CheckCircle2,
-  Download
+  Download,
+  Palette,
+  Check
 } from 'lucide-react';
 
 interface HomeViewProps {
@@ -117,6 +119,12 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
             <div className="relative w-full min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:flex-1">
               <div className="animate-marquee flex items-center gap-3 sm:gap-4 whitespace-nowrap select-none py-1">
                 {/* Track Items */}
+                <div className="flex items-center gap-2 rounded-full border border-[#27FCF2]/40 bg-[#27FCF2]/10 px-4 py-2 text-xs font-mono text-[#27FCF2] hover:bg-[#27FCF2]/20 transition-colors">
+                  <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">100% Personnalisable à Votre Marque</span>
+                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Couleurs & Produits</span>
+                </div>
+
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
                   <Layers className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
                   <span className="font-semibold">Shopify OS 2.0 Native</span>
@@ -178,6 +186,12 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 </div>
 
                 {/* Seamless Loop Duplicate */}
+                <div className="flex items-center gap-2 rounded-full border border-[#27FCF2]/40 bg-[#27FCF2]/10 px-4 py-2 text-xs font-mono text-[#27FCF2] hover:bg-[#27FCF2]/20 transition-colors">
+                  <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">100% Personnalisable à Votre Marque</span>
+                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Couleurs & Produits</span>
+                </div>
+
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
                   <Layers className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
                   <span className="font-semibold">Shopify OS 2.0 Native</span>
@@ -268,26 +282,34 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
       {/* 3. Global Quality Benchmark Ticker */}
       <section className="border-y border-white/10 bg-black/60 py-5 backdrop-blur-md overflow-hidden">
         <div className="animate-marquee-fast flex items-center gap-16 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity select-none">
+          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% PERSONNALISABLE À VOTRE MARQUE</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">100% WHITE-LABEL READY</span>
+          <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY ONLINE STORE 2.0</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY PLUS READY</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SUB-SECOND LIQUID RUNTIME</span>
           <span className="text-neutral-700">/</span>
-          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 14 PRODUCTION WEBSITES</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 15 PRODUCTION WEBSITES</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">ZERO APP SUBSCRIPTIONS NEEDED</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">LIFETIME COMMERCIAL USAGE</span>
           {/* Loop duplicate */}
           <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% PERSONNALISABLE À VOTRE MARQUE</span>
+          <span className="text-neutral-700">/</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">100% WHITE-LABEL READY</span>
+          <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY ONLINE STORE 2.0</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SHOPIFY PLUS READY</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">SUB-SECOND LIQUID RUNTIME</span>
           <span className="text-neutral-700">/</span>
-          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 14 PRODUCTION WEBSITES</span>
+          <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">NEXT.JS 15 PRODUCTION WEBSITES</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">ZERO APP SUBSCRIPTIONS NEEDED</span>
           <span className="text-neutral-700">/</span>
@@ -473,6 +495,118 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
             <span>Browse All {themes.length} Themes & Websites</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
+        </div>
+      </section>
+
+      {/* 4.5. Dedicated Rebrandability & White-Label Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl border border-[#27FCF2]/25 bg-gradient-to-b from-[#0e1717]/80 to-black/90 p-8 sm:p-12 lg:p-16 backdrop-blur-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] space-y-12">
+          
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#27FCF2]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+          
+          {/* Section Header */}
+          <div className="relative z-10 space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold bg-[#27FCF2]/10 border border-[#27FCF2]/30 px-3 py-1 rounded-full">
+              <Sparkles className="w-3.5 h-3.5 text-[#27FCF2]" />
+              100% Marque Blanche • Rebranding Après Achat
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+              Adaptez Chaque Création à Votre Propre Marque
+            </h2>
+            <p className="text-sm sm:text-base text-[#ebebe6]/80 font-sans leading-relaxed">
+              Les visuels et marques de démonstration ne servent qu'à vous inspirer. Dès le téléchargement de votre archive ZIP après l'achat, vous avez les pleins droits pour mettre le site ou le thème 100% à vos couleurs, insérer votre logo, vos photos et vos produits.
+            </p>
+          </div>
+
+          {/* 3 Pillars Grid */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Pillar 1 */}
+            <div className="rounded-2xl border border-white/10 bg-black/60 p-6 sm:p-7 space-y-4 backdrop-blur-md hover:border-[#27FCF2]/40 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                <Palette className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
+                01 / Identité Visuelle
+              </span>
+              <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
+                Votre Logo & Charte Graphique
+              </h3>
+              <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                Remplacez le logo en quelques secondes. Appliquez votre palette de couleurs (fonds, textes, boutons) et sélectionnez vos typographies officielles pour une parfaite harmonie avec votre image.
+              </p>
+              <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
+                <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
+                Palette & polices modifiables
+              </div>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="rounded-2xl border border-white/10 bg-black/60 p-6 sm:p-7 space-y-4 backdrop-blur-md hover:border-[#27FCF2]/40 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                <Layout className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
+                02 / Contenus & Produits
+              </span>
+              <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
+                Vos Produits, Visuels & Textes
+              </h3>
+              <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                Intégrez vos propres fiches produits, bannières vidéo, lookbooks et textes promotionnels. L'architecture est 100% modulaire et pensée pour mettre en valeur votre propre univers commercial.
+              </p>
+              <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
+                <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
+                Glisser-déposer sans coder
+              </div>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="rounded-2xl border border-white/10 bg-black/60 p-6 sm:p-7 space-y-4 backdrop-blur-md hover:border-[#27FCF2]/40 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-[#27FCF2]/10 border border-[#27FCF2]/20 flex items-center justify-center text-[#27FCF2]">
+                <Globe className="w-6 h-6" />
+              </div>
+              <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
+                03 / Nom de Domaine & Droits
+              </span>
+              <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
+                Votre Domaine & Pleine Propriété
+              </h3>
+              <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
+                100% Marque Blanche (White-label). Zéro mention ou filigrane Croese imposé. Connectez votre propre nom de domaine et conservez 100% de vos marges avec une licence commerciale perpétuelle.
+              </p>
+              <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
+                <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
+                Zéro redevance • Domaine personnalisé
+              </div>
+            </div>
+
+          </div>
+
+          {/* Shopify vs Website Rebrand Practical Box */}
+          <div className="relative z-10 border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#27FCF2] uppercase font-bold">
+                <Layout className="w-3.5 h-3.5" />
+                <span>Pour les Thèmes Shopify (OS 2.0)</span>
+              </div>
+              <p className="text-xs text-[#ebebe6]/80 font-sans leading-relaxed">
+                Aucune compétence technique nécessaire. Vous téléchargez le ZIP, l'uploadez dans votre admin Shopify, puis personnalisez tout directement dans l'éditeur visuel natif en direct.
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#27FCF2] uppercase font-bold">
+                <Globe className="w-3.5 h-3.5" />
+                <span>Pour les Sites Web Production (Next.js / React)</span>
+              </div>
+              <p className="text-xs text-[#ebebe6]/80 font-sans leading-relaxed">
+                Code source complet et modulaire inclus. Les tokens Tailwind CSS permettent de modifier les couleurs et typographies globales en éditant un seul fichier de configuration.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 

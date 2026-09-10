@@ -16,6 +16,10 @@ export function FaqView() {
 
   const faqData: FAQItem[] = [
     {
+      question: "Can I customize the site or theme to my own brand after purchase? (100% Rebrandable)",
+      answer: "Yes, 100%! All our Shopify themes and website templates are delivered completely white-label. Immediately after purchase and downloading your ZIP archive, you have full freedom to replace demo assets with your own logo, typography, color palettes, product collections, and images. For Shopify themes, everything is customizable visually via Shopify's native drag-and-drop editor without touching code. For websites, you get full Next.js/React source code and Tailwind configuration tokens to customize your identity in minutes with zero third-party watermarks."
+    },
+    {
       question: "How do I purchase and download my chosen theme or website?",
       answer: "Transactions are executed directly via our secure checkout. You can check out with Credit/Debit Card or Apple Pay/Google Pay. Once completed, you receive immediate access to the production ZIP download, your commercial license certificate, and receipt email."
     },
