@@ -59,6 +59,90 @@ export default function App() {
     };
   }, []);
 
+  // Synchronize dynamic title and meta description per route
+  useEffect(() => {
+    let title = "Croese — Shopify Themes & Production Websites";
+    let desc = "Premium, conversion-optimized Shopify themes and production website templates with instant digital delivery and commercial licensing.";
+
+    if (currentPath.startsWith('/themes/') && currentPath !== '/themes') {
+      const slug = currentPath.split('/themes/')[1];
+      const theme = getThemeBySlug(slug);
+      if (theme) {
+        title = `${theme.name} — ${theme.category === 'website' ? 'Production Website Template' : 'Shopify 2.0 Theme'} | Croese`;
+        desc = theme.tagline || theme.description;
+      }
+    } else {
+      switch (currentPath) {
+        case '/':
+          title = "Croese — Shopify Themes & Production Websites";
+          desc = "Premium, conversion-optimized Shopify themes and production website templates with instant digital delivery and commercial licensing.";
+          break;
+        case '/themes':
+          title = "Shopify Themes Catalog — Croese";
+          desc = "Explore high-conversion, speed-optimized Shopify Online Store 2.0 themes crafted for modern ecommerce flagships.";
+          break;
+        case '/websites':
+          title = "Production Website Templates — Croese";
+          desc = "Clean, responsive React, Next.js, and GSAP creative website templates built with production source code and commercial rights.";
+          break;
+        case '/about':
+          title = "About Croese — Studio & Craftsmanship";
+          desc = "Learn about Croese's design philosophy, performance engineering standards, and commitment to white-label digital independence.";
+          break;
+        case '/support':
+          title = "Support & Installation Guide — Croese";
+          desc = "Step-by-step setup guides, documentation, and technical support for your purchased Shopify themes and website templates.";
+          break;
+        case '/faq':
+          title = "Frequently Asked Questions — Croese";
+          desc = "Answers to common questions regarding our Shopify themes, source code delivery, licensing terms, and payment methods.";
+          break;
+        case '/contact':
+          title = "Contact Studio — Croese";
+          desc = "Get in touch with the Croese team for license inquiries, custom development requests, or technical support.";
+          break;
+        case '/success':
+          title = "Order Confirmation & Download — Croese";
+          desc = "Your purchase was successful. Access your source code package, license key, and setup instructions.";
+          break;
+        case '/legal/terms-of-service':
+          title = "Terms of Service — Croese";
+          desc = "Read the commercial terms and conditions governing the purchase and licensing of digital products from Croese.";
+          break;
+        case '/legal/privacy-policy':
+          title = "Privacy Policy — Croese";
+          desc = "Learn how Croese processes, protects, and handles personal data in strict compliance with EU GDPR regulations.";
+          break;
+        case '/legal/refund-policy':
+          title = "Refund Policy & Guarantees — Croese";
+          desc = "Our 14-day technical quality guarantee and refund eligibility terms for digital software purchases.";
+          break;
+        case '/legal/license':
+          title = "Commercial License Agreement — Croese";
+          desc = "Commercial deployment rights, perpetual single-project terms, and white-label permissions for Croese products.";
+          break;
+        default:
+          title = "Croese — Shopify Themes & Production Websites";
+          break;
+      }
+    }
+
+    document.title = title;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", desc);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", title);
+    }
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", desc);
+    }
+  }, [currentPath]);
+
   const navigateTo = (path: string) => {
     window.location.hash = path;
   };

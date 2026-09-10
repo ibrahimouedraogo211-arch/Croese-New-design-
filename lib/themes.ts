@@ -263,7 +263,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     faq: [
       {
         question: "What makes ferm LIVING the reference for interior design stores?",
-        answer: "Based in Copenhagen, ferm LIVING merges artisanal Scandinavian craftsmanship with high-converting commerce layouts, enabling luxury furniture and home décor brands to inspire and convert seamlessly."
+        answer: "Based in Copenhagen, ferm LIVING merges artisanal Scandinavian craftsmanship with high-converting commerce layouts, enabling luxury furniture and home decor brands to inspire and convert seamlessly."
       },
       {
         question: "Does the theme support bulky furniture freight and shipping rules?",
@@ -400,7 +400,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     category: "website",
     categoryLabel: "React, GSAP & Creative Front-End",
     tagline: "Avant-garde motion, creative development, and interactive portfolio.",
-    description: "Interactive digital experience created by designer and front-end developer Milan Compain. Features dynamic interactive star canvas (\"Suivez l’étoile\"), fluid GSAP kinetic typography, and avant-garde motion.",
+    description: "Interactive digital experience created by designer and front-end developer Milan Compain. Features dynamic interactive star canvas (\"Follow the Star\"), fluid GSAP kinetic typography, and avant-garde motion.",
     fullDescription: "Milan Compain is an internationally acclaimed interactive creative portfolio web template. Blending high-craft art direction, precision motion design, and cutting-edge front-end engineering, this website features real-time canvas star particle physics, fluid GSAP timeline transitions, dark minimalist aesthetics, and responsive case-study showcases. Perfect for creative directors, design engineers, and digital studios seeking an unforgettable web presence.",
     price: "1 750 €",
     priceNumber: 1750,
@@ -414,7 +414,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
     ],
     features: [
-      "Interactive Celestial Canvas: Real-time interactive cursor star trail particle physics ('Suivez l’étoile') engineered with native Canvas and smooth RAF rendering.",
+      "Interactive Celestial Canvas: Real-time interactive cursor star trail particle physics ('Follow the Star') engineered with native Canvas and smooth RAF rendering.",
       "GSAP & Kinetic Motion: Frictionless inertia scrolling, kinetic typographic reveals, and staggered viewport choreography.",
       "Creative Engineering Stack: Clean modular React & TypeScript architecture with dark-mode elegance and lightweight asset delivery."
     ],
@@ -439,7 +439,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
       {
         id: "rev_milan_1",
         userName: "Tristan Delacroix",
-        shopName: "Atelier Numérique Paris",
+        shopName: "Digital Creative Studio Paris",
         rating: 5,
         text: "The star canvas and GSAP motion choreography are sublime. Our studio received three enterprise inbound inquiries the first week after launching.",
         date: "September 05, 2026"
