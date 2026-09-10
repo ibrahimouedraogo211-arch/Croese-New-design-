@@ -69,7 +69,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     categoryLabel: "Shopify OS 2.0 & Expedition",
     tagline: "Award-winning Shopify OS 2.0 theme for outdoor, 4x4 & expedition gear.",
     description: "Engineered for overland outlaws and outdoor adventurers. Features rugged typography, full-width expedition imagery, and heavy-duty collection architecture.",
-    fullDescription: "Brigade Overland is an Awwwards-nominated Shopify OS 2.0 theme engineered for North America's premier supplier of off-road and expedition goods. Built on native Shopify Online Store 2.0 architecture, it features rugged aesthetics, high-impact background photography, heavy-duty collection grids, and sub-second mobile checkout.",
+    fullDescription: "Brigade Overland is an award-winning Shopify OS 2.0 theme engineered for North America's premier supplier of off-road and expedition goods. Built on native Shopify Online Store 2.0 architecture, it features rugged aesthetics, high-impact background photography, heavy-duty collection grids, and sub-second mobile checkout.",
     price: "680 €",
     priceNumber: 680,
     priceId: "pri_brigade",
@@ -84,7 +84,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
       "https://brigadeoverland.com/cdn/shop/files/banner-2.webp?width=1216"
     ],
     features: [
-      "Awwwards Nominated Design: Curated layout featuring high-contrast rugged styling, flat UI surfaces, and expansive photographic vistas.",
+      "Award-Winning Design: Curated layout featuring high-contrast rugged styling, flat UI surfaces, and expansive photographic vistas.",
       "Shopify OS 2.0 Heavy-Duty Architecture: Seamless drag-and-drop exploration for rooftop tents, swags, recovery boards, and vehicle-specific mounting hardware.",
       "Expedition Grade Conversion Flow: High-speed product card browsing, slide-out drawer cart, instant add-to-cart, detailed spec tabs, and mobile-optimized checkout."
     ],
@@ -98,7 +98,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     faq: [
       {
         question: "What makes Brigade Overland standout as a Shopify theme?",
-        answer: "Recognized as an Awwwards Nominee, Brigade Overland merges industrial, rugged branding with high-precision Shopify OS 2.0 architecture designed to convert outdoor and automotive gear adventurers."
+        answer: "Engineered for high performance, Brigade Overland merges industrial, rugged branding with high-precision Shopify OS 2.0 architecture designed to convert outdoor and automotive gear adventurers."
       },
       {
         question: "Is Brigade Overland compatible with all Shopify plans?",
@@ -288,8 +288,8 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     category: "website",
     categoryLabel: "React, Three.js & GSAP",
     tagline: "Award-winning 3D interactive e-commerce and brand showcase website.",
-    description: "Awwwards-recognized 3D experience with real-time WebGL liquid shaders, smooth GSAP ScrollTrigger animations, and interactive product showcases.",
-    fullDescription: "Palmo is an award-winning interactive website template engineered for avant-garde e-commerce brands, beverage producers, and experiential design studios. Featured on Awwwards and recognized as GSAP Site of the Day, Palmo integrates fluid 3D WebGL liquid shaders, inertia scrolling, kinetic typography, and smooth page transitions with high-converting store modules.",
+    description: "Immersive 3D experience with real-time WebGL liquid shaders, smooth GSAP ScrollTrigger animations, and interactive product showcases.",
+    fullDescription: "Palmo is an award-winning interactive website template engineered for avant-garde e-commerce brands, beverage producers, and experiential design studios. Recognized as GSAP Site of the Day, Palmo integrates fluid 3D WebGL liquid shaders, inertia scrolling, kinetic typography, and smooth page transitions with high-converting store modules.",
     price: "290 €",
     priceNumber: 290,
     priceId: "pri_palmo",
@@ -305,7 +305,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     ],
     features: [
       "3D WebGL & Liquid Shaders: Custom Three.js shaders rendering realistic fluid dynamics and interactive 3D product models.",
-      "GSAP ScrollTrigger & Kinetic Typography: Cinematic scroll storytelling with inertia physics, split-text animations, and fluid transitions recognized on Awwwards.",
+      "GSAP ScrollTrigger & Kinetic Typography: Cinematic scroll storytelling with inertia physics, split-text animations, and fluid transitions.",
       "High-Converting E-commerce Modules: Interactive bottle flavor selector, slide-out cart drawer, and responsive mobile-first navigation.",
       "Optimized Performance & Fallbacks: Smooth 60fps GPU acceleration with automatic low-power device fallbacks and instant loading."
     ],
@@ -343,9 +343,9 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     name: "Sigma Imaging",
     category: "website",
     categoryLabel: "Tailwind, JS & Hyvä E-Commerce",
-    tagline: "Awwwards-nominated optics and photography flagship e-commerce website.",
+    tagline: "High-performance optics and photography flagship e-commerce website.",
     description: "Official Scandinavian flagship platform for Sigma lenses, cameras, and cine gear. Features interactive optical filters, sample photo galleries, and B2B/D2C store architecture.",
-    fullDescription: "Sigma Imaging is an Awwwards-nominated flagship e-commerce and brand showcase platform engineered for professional cameras, cinema lenses, and optical equipment. Developed by Nordic Web Team and built with Tailwind CSS, high-performance caching, and clean modular architecture, Sigma Imaging delivers instant product catalog exploration, focal length and mount filtering, high-resolution sample shot viewers, and streamlined order fulfillment.",
+    fullDescription: "Sigma Imaging is a flagship e-commerce and brand showcase platform engineered for professional cameras, cinema lenses, and optical equipment. Developed by Nordic Web Team and built with Tailwind CSS, high-performance caching, and clean modular architecture, Sigma Imaging delivers instant product catalog exploration, focal length and mount filtering, high-resolution sample shot viewers, and streamlined order fulfillment.",
     price: "240 €",
     priceNumber: 240,
     priceId: "pri_sigma",
@@ -360,12 +360,12 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
       "https://www.sigma-imaging.se/media/wysiwyg/c025_16_300_35_67_product_img01_1.png"
     ],
     features: [
-      "Awwwards-Nominated Design: High-prestige optical brand showcase combining minimal Scandinavian aesthetics, editorial photography, and bold typographic rhythm.",
+      "High-Performance Flagship Design: High-prestige optical brand showcase combining minimal Scandinavian aesthetics, editorial photography, and bold typographic rhythm.",
       "Optical & Lens Catalog Engine: Instant mount, aperture, and focal length filtering with interactive specification comparisons and sample shots.",
       "Optimized Tailwind Architecture: Lightweight, mobile-first design with sub-second page rendering and smooth responsive navigation across all breakpoints.",
       "Comprehensive Hardware Experience: Dedicated lens & camera showcases, warranty registration portal, and streamlined customer support flows."
     ],
-    techStack: ["Tailwind CSS", "JavaScript", "Responsive UI", "E-Commerce", "Awwwards Nominee"],
+    techStack: ["Tailwind CSS", "JavaScript", "Responsive UI", "E-Commerce", "Flagship Architecture"],
     compatibility: "Modern Browsers / Any E-Commerce Backend / Node 18+",
     releaseDate: "August 28, 2026",
     version: "2.0.0",
@@ -375,7 +375,7 @@ export const SHOPIFY_THEMES: ShopifyTheme[] = [
     faq: [
       {
         question: "What makes the Sigma Imaging website unique?",
-        answer: "Nominated on Awwwards for e-commerce and interactive design, Sigma Imaging delivers a high-performance experience tailored for photography gear, optics, and precision engineering."
+        answer: "Engineered for premier e-commerce and interactive design, Sigma Imaging delivers a high-performance experience tailored for photography gear, optics, and precision engineering."
       },
       {
         question: "Can this website template be connected to our store backend?",

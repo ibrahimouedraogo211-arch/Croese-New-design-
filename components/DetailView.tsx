@@ -121,39 +121,6 @@ export function DetailView({ theme, onNavigate }: DetailViewProps) {
                 <span>Open Live Interactive Demo</span>
               </a>
             )}
-            {theme.slug === 'palmo' && (
-              <a
-                href="https://www.awwwards.com/inspiration/desktop-palmo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
-              >
-                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
-                <span>View on Awwwards Inspiration</span>
-              </a>
-            )}
-            {theme.slug === 'sigma-imaging' && (
-              <a
-                href="https://www.awwwards.com/sites/sigma-imaging"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
-              >
-                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
-                <span>View on Awwwards Nominee</span>
-              </a>
-            )}
-            {theme.slug === 'brigade-overland' && (
-              <a
-                href="https://www.awwwards.com/sites/brigade-overland"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full border border-white/10 bg-black hover:bg-white/5 text-[#ebebe6]/60 hover:text-[#27FCF2] transition-all text-[11px] uppercase font-bold tracking-wider flex items-center justify-center gap-2"
-              >
-                <Globe className="h-3.5 w-3.5 text-[#27FCF2]" />
-                <span>View on Awwwards Nominee</span>
-              </a>
-            )}
           </div>
         </div>
 

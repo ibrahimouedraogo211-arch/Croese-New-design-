@@ -100,10 +100,103 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
 
         </div>
 
-        {/* Floating Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#ebebe6]/40">
-          <span>Scroll to explore</span>
-          <div className="w-px h-8 bg-gradient-to-b from-[#ebebe6]/40 to-transparent animate-pulse" />
+        {/* Creativeans Signature: "As Featured In" Scrolling Feature Bar (in the reserved space at bottom of hero) */}
+        <div className="absolute right-0 bottom-3 sm:bottom-5 md:bottom-7 left-0 px-4 sm:px-8 z-20 pointer-events-auto">
+          <div className="mx-auto flex flex-col items-center gap-3 sm:gap-6 md:gap-8 md:max-w-6xl md:flex-row md:items-center">
+            <div className="shrink-0 flex items-center gap-3">
+              <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#ebebe6]/80 uppercase font-mono whitespace-nowrap">
+                As Featured In
+              </span>
+              <div className="h-3.5 w-px bg-white/20 hidden md:block" />
+            </div>
+
+            <div className="relative w-full min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] md:flex-1">
+              <div className="animate-marquee flex items-center gap-12 sm:gap-16 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity select-none py-1">
+                {/* Feature 1: Shopify Plus */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="h-2 w-2 rounded-full bg-[#27FCF2]" />
+                  <span>SHOPIFY PLUS PARTNER</span>
+                </div>
+
+                {/* Feature 2: Digital Commerce */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="text-[#27FCF2] font-black">✦</span>
+                  <span>DIGITAL COMMERCE AWARDS</span>
+                </div>
+
+                {/* Feature 3: TechCrunch */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="font-mono text-neutral-500 font-bold">TC</span>
+                  <span>TECHCRUNCH COMMERCE</span>
+                </div>
+
+                {/* Feature 4: Vogue Business */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif italic text-[#ebebe6]">
+                  <span>Vogue Business</span>
+                </div>
+
+                {/* Feature 5: Forbes */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif text-[#ebebe6]">
+                  <span>FORBES COMMERCE</span>
+                </div>
+
+                {/* Feature 6: CSS Design Awards */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="text-[#27FCF2]">★</span>
+                  <span>CSS DESIGN AWARDS</span>
+                </div>
+
+                {/* Feature 7: The Dieline */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span>THE DIELINE</span>
+                </div>
+
+                {/* Feature 8: Core Web Vitals 100 */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#27FCF2]">
+                  <Zap className="w-3.5 h-3.5" />
+                  <span>99+ PAGESPEED</span>
+                </div>
+
+                {/* Seamless loop duplicate */}
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="h-2 w-2 rounded-full bg-[#27FCF2]" />
+                  <span>SHOPIFY PLUS PARTNER</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="text-[#27FCF2] font-black">✦</span>
+                  <span>DIGITAL COMMERCE AWARDS</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="font-mono text-neutral-500 font-bold">TC</span>
+                  <span>TECHCRUNCH COMMERCE</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif italic text-[#ebebe6]">
+                  <span>Vogue Business</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif text-[#ebebe6]">
+                  <span>FORBES COMMERCE</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span className="text-[#27FCF2]">★</span>
+                  <span>CSS DESIGN AWARDS</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
+                  <span>THE DIELINE</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#27FCF2]">
+                  <Zap className="w-3.5 h-3.5" />
+                  <span>99+ PAGESPEED</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -156,6 +249,116 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">ZERO APP SUBSCRIPTIONS NEEDED</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">LIFETIME COMMERCIAL USAGE</span>
+        </div>
+      </section>
+
+      {/* Creativeans Signature: "Featured Works" Scrolling Marquee Carousel */}
+      <section className="space-y-8 overflow-hidden pt-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end justify-between">
+          <div className="space-y-2">
+            <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5 text-[#27FCF2]" />
+              Signature Deployments
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+              Featured Works
+            </h2>
+          </div>
+          <button
+            onClick={() => onNavigate('/themes')}
+            className="text-xs font-mono text-[#ebebe6]/70 hover:text-[#27FCF2] uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer border border-white/15 px-4 py-2 rounded-full hover:border-[#27FCF2]/50 bg-white/5"
+          >
+            <span>See All Works</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="space-y-6">
+          {/* Row 1: Scrolling Left */}
+          <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <div className="animate-marquee-slow flex items-center gap-6 py-2 select-none">
+              {[...themes, ...themes].map((item, idx) => (
+                <div
+                  key={`track1-${item.slug}-${idx}`}
+                  onClick={() => onNavigate(`/themes/${item.slug}`)}
+                  className="group relative shrink-0 cursor-pointer overflow-hidden rounded-3xl md:rounded-4xl bg-neutral-900/60 border border-white/10 hover:border-[#27FCF2]/60 transition-all duration-300 h-64 w-[340px] sm:h-72 sm:w-[440px] md:h-80 md:w-[500px]"
+                >
+                  <img
+                    src={item.coverImage}
+                    alt={item.name}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  
+                  <div className="relative flex h-full flex-col justify-end p-6 md:p-8 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-memogram text-xl sm:text-2xl text-white tracking-wide">
+                        {item.name}
+                      </h3>
+                      <div className="h-9 w-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white group-hover:bg-[#27FCF2] group-hover:text-black transition-all">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full border border-white/20 bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-mono text-[#ebebe6]">
+                        {item.categoryLabel || (item.category === 'website' ? 'Production Web' : 'Shopify 2.0')}
+                      </span>
+                      <span className="rounded-full border border-white/20 bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-mono text-[#27FCF2]">
+                        {item.price}
+                      </span>
+                      <span className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[10px] font-mono text-[#ebebe6]/60">
+                        {item.tagline}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2: Scrolling Right */}
+          <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <div className="animate-marquee-reverse flex items-center gap-6 py-2 select-none">
+              {[...themes].reverse().concat([...themes].reverse()).map((item, idx) => (
+                <div
+                  key={`track2-${item.slug}-${idx}`}
+                  onClick={() => onNavigate(`/themes/${item.slug}`)}
+                  className="group relative shrink-0 cursor-pointer overflow-hidden rounded-3xl md:rounded-4xl bg-neutral-900/60 border border-white/10 hover:border-[#27FCF2]/60 transition-all duration-300 h-64 w-[340px] sm:h-72 sm:w-[440px] md:h-80 md:w-[500px]"
+                >
+                  <img
+                    src={item.coverImage}
+                    alt={item.name}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  
+                  <div className="relative flex h-full flex-col justify-end p-6 md:p-8 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-memogram text-xl sm:text-2xl text-white tracking-wide">
+                        {item.name}
+                      </h3>
+                      <div className="h-9 w-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white group-hover:bg-[#27FCF2] group-hover:text-black transition-all">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full border border-white/20 bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-mono text-[#ebebe6]">
+                        {item.categoryLabel || (item.category === 'website' ? 'Production Web' : 'Shopify 2.0')}
+                      </span>
+                      <span className="rounded-full border border-white/20 bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-mono text-[#27FCF2]">
+                        {item.price}
+                      </span>
+                      <span className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[10px] font-mono text-[#ebebe6]/60">
+                        {item.tagline}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
