@@ -121,8 +121,8 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 {/* Track Items */}
                 <div className="flex items-center gap-2 rounded-full border border-[#27FCF2]/40 bg-[#27FCF2]/10 px-4 py-2 text-xs font-mono text-[#27FCF2] hover:bg-[#27FCF2]/20 transition-colors">
                   <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
-                  <span className="font-semibold">100% Personnalisable à Votre Marque</span>
-                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Couleurs & Produits</span>
+                  <span className="font-semibold">100% Brand Customizable</span>
+                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Colors & Products</span>
                 </div>
 
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
@@ -188,8 +188,8 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 {/* Seamless Loop Duplicate */}
                 <div className="flex items-center gap-2 rounded-full border border-[#27FCF2]/40 bg-[#27FCF2]/10 px-4 py-2 text-xs font-mono text-[#27FCF2] hover:bg-[#27FCF2]/20 transition-colors">
                   <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
-                  <span className="font-semibold">100% Personnalisable à Votre Marque</span>
-                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Couleurs & Produits</span>
+                  <span className="font-semibold">100% Brand Customizable</span>
+                  <span className="text-[#ebebe6]/60 text-[11px]">• Logo, Colors & Products</span>
                 </div>
 
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
@@ -282,7 +282,7 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
       {/* 3. Global Quality Benchmark Ticker */}
       <section className="border-y border-white/10 bg-black/60 py-5 backdrop-blur-md overflow-hidden">
         <div className="animate-marquee-fast flex items-center gap-16 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity select-none">
-          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% PERSONNALISABLE À VOTRE MARQUE</span>
+          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% BRAND CUSTOMIZABLE</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">100% WHITE-LABEL READY</span>
           <span className="text-neutral-700">/</span>
@@ -299,7 +299,7 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">LIFETIME COMMERCIAL USAGE</span>
           {/* Loop duplicate */}
           <span className="text-neutral-700">/</span>
-          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% PERSONNALISABLE À VOTRE MARQUE</span>
+          <span className="text-sm font-semibold tracking-wider text-[#27FCF2] font-mono">100% BRAND CUSTOMIZABLE</span>
           <span className="text-neutral-700">/</span>
           <span className="text-sm font-semibold tracking-wider text-[#ebebe6] font-mono">100% WHITE-LABEL READY</span>
           <span className="text-neutral-700">/</span>
@@ -509,13 +509,13 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
           <div className="relative z-10 space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold bg-[#27FCF2]/10 border border-[#27FCF2]/30 px-3 py-1 rounded-full">
               <Sparkles className="w-3.5 h-3.5 text-[#27FCF2]" />
-              100% Marque Blanche • Rebranding Après Achat
+              100% White-Label • Rebrand After Purchase
             </div>
             <h2 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
-              Adaptez Chaque Création à Votre Propre Marque
+              Make Every Creation Uniquely Yours
             </h2>
             <p className="text-sm sm:text-base text-[#ebebe6]/80 font-sans leading-relaxed">
-              Les visuels et marques de démonstration ne servent qu'à vous inspirer. Dès le téléchargement de votre archive ZIP après l'achat, vous avez les pleins droits pour mettre le site ou le thème 100% à vos couleurs, insérer votre logo, vos photos et vos produits.
+              Demo visuals, brands, and products are shown for inspiration only. Immediately upon downloading your ZIP archive after checkout, you hold full commercial rights to customize the site or theme with your own logo, color palette, imagery, and catalog.
             </p>
           </div>
 
@@ -528,17 +528,17 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 <Palette className="w-6 h-6" />
               </div>
               <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
-                01 / Identité Visuelle
+                01 / Visual Identity
               </span>
               <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
-                Votre Logo & Charte Graphique
+                Your Logo & Brand Guidelines
               </h3>
               <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
-                Remplacez le logo en quelques secondes. Appliquez votre palette de couleurs (fonds, textes, boutons) et sélectionnez vos typographies officielles pour une parfaite harmonie avec votre image.
+                Swap the logo in seconds. Apply your brand colors (backgrounds, surfaces, text, buttons) and select your primary fonts for seamless brand alignment.
               </p>
               <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
                 <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
-                Palette & polices modifiables
+                Editable palettes & typography
               </div>
             </div>
 
@@ -548,17 +548,17 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 <Layout className="w-6 h-6" />
               </div>
               <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
-                02 / Contenus & Produits
+                02 / Content & Catalog
               </span>
               <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
-                Vos Produits, Visuels & Textes
+                Your Products, Media & Copy
               </h3>
               <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
-                Intégrez vos propres fiches produits, bannières vidéo, lookbooks et textes promotionnels. L'architecture est 100% modulaire et pensée pour mettre en valeur votre propre univers commercial.
+                Integrate your own product lines, video hero reels, lookbooks, and promotional storytelling. The modular layout is engineered to elevate your specific catalog.
               </p>
               <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
                 <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
-                Glisser-déposer sans coder
+                Visual drag-and-drop workflow
               </div>
             </div>
 
@@ -568,17 +568,17 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
                 <Globe className="w-6 h-6" />
               </div>
               <span className="text-[10px] font-mono text-[#27FCF2] uppercase tracking-wider font-bold block">
-                03 / Nom de Domaine & Droits
+                03 / Domain & Ownership
               </span>
               <h3 className="text-lg font-bold text-[#ebebe6] font-sans">
-                Votre Domaine & Pleine Propriété
+                Your Domain & Full Ownership
               </h3>
               <p className="text-xs text-[#ebebe6]/70 leading-relaxed font-sans">
-                100% Marque Blanche (White-label). Zéro mention ou filigrane Croese imposé. Connectez votre propre nom de domaine et conservez 100% de vos marges avec une licence commerciale perpétuelle.
+                100% White-label. Zero third-party watermarks or forced badges. Connect your custom domain and retain 100% of your sales margins under a perpetual commercial license.
               </p>
               <div className="pt-2 text-[11px] text-[#27FCF2] font-mono flex items-center gap-1.5 font-medium">
                 <Check className="w-3.5 h-3.5 text-[#27FCF2]" />
-                Zéro redevance • Domaine personnalisé
+                Zero royalties • Custom domain
               </div>
             </div>
 
@@ -589,20 +589,20 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#27FCF2] uppercase font-bold">
                 <Layout className="w-3.5 h-3.5" />
-                <span>Pour les Thèmes Shopify (OS 2.0)</span>
+                <span>For Shopify Themes (OS 2.0)</span>
               </div>
               <p className="text-xs text-[#ebebe6]/80 font-sans leading-relaxed">
-                Aucune compétence technique nécessaire. Vous téléchargez le ZIP, l'uploadez dans votre admin Shopify, puis personnalisez tout directement dans l'éditeur visuel natif en direct.
+                Zero coding required. Download the ZIP file, upload it to your Shopify Admin, and customize everything in real-time through the native visual theme editor.
               </p>
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#27FCF2] uppercase font-bold">
                 <Globe className="w-3.5 h-3.5" />
-                <span>Pour les Sites Web Production (Next.js / React)</span>
+                <span>For Production Websites (Next.js / React)</span>
               </div>
               <p className="text-xs text-[#ebebe6]/80 font-sans leading-relaxed">
-                Code source complet et modulaire inclus. Les tokens Tailwind CSS permettent de modifier les couleurs et typographies globales en éditant un seul fichier de configuration.
+                Complete modular source code provided. Tailwind CSS design tokens allow you to retheme the entire site by simply updating a single configuration file.
               </p>
             </div>
           </div>
