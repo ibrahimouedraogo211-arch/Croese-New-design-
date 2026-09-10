@@ -124,7 +124,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6">
       <div className="max-w-2xl text-center space-y-4">
-        <span className="text-emerald-400 text-xs font-mono uppercase tracking-widest font-bold">
+        <span className="text-[#27FCF2] text-xs font-mono uppercase tracking-widest font-bold">
           Croese Production Template
         </span>
         <h1 className="text-4xl font-extrabold tracking-tight">
@@ -228,40 +228,40 @@ export default function App() {
   };
 
   return (
-    <div id="success-view" className="max-w-2xl mx-auto px-4 sm:px-6 py-16 space-y-8 animate-fade-in text-neutral-300">
+    <div id="success-view" className="max-w-2xl mx-auto px-4 sm:px-6 py-16 space-y-8 animate-fade-in text-[#ebebe6]/80 relative z-10">
       
       {/* Visual Success Confirmation Box */}
-      <div className="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl relative overflow-hidden">
-        <div className="mx-auto h-16 w-16 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center">
+      <div className="bg-black/60 border border-white/15 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+        <div className="mx-auto h-16 w-16 bg-white/5 border border-white/10 text-[#27FCF2] rounded-2xl flex items-center justify-center">
           <CheckCircle className="h-8 w-8" />
         </div>
         
-        <div className="space-y-1">
-          <span className="text-[10px] tracking-widest font-mono font-bold uppercase text-emerald-400">
+        <div className="space-y-2">
+          <span className="text-xs tracking-widest font-mono font-semibold uppercase text-[#27FCF2]">
             Payment Completed • Instant Digital Delivery
           </span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Thank you for your purchase!
+          <h1 className="text-2xl sm:text-3xl font-normal text-[#ebebe6] tracking-tight uppercase font-memogram">
+            Thank you for your purchase
           </h1>
         </div>
 
-        <p className="text-xs text-neutral-400 leading-normal max-w-sm mx-auto font-sans">
+        <p className="text-xs text-[#ebebe6]/70 leading-normal max-w-sm mx-auto font-sans">
           Your digital order has been completed successfully. Your download links and customized installation files are initialized below.
         </p>
 
         {/* Transaction attributes */}
-        <div className="pt-4 border-t border-neutral-800 grid grid-cols-2 gap-4 text-left text-xs font-sans">
-          <div className="space-y-1 p-3 bg-neutral-950 rounded-xl border border-neutral-800/80">
-            <span className="block text-[9px] text-neutral-500 uppercase tracking-widest font-bold">Delivered Product</span>
-            <span className="text-neutral-200 font-semibold truncate block">{fullTitle}</span>
+        <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-4 text-left text-xs font-sans">
+          <div className="space-y-1 p-3.5 bg-white/5 rounded-2xl border border-white/10">
+            <span className="block text-[9px] text-[#ebebe6]/50 uppercase tracking-widest font-semibold font-mono">Delivered Product</span>
+            <span className="text-[#ebebe6] font-medium truncate block">{fullTitle}</span>
           </div>
-          <div className="space-y-1 p-3 bg-neutral-950 rounded-xl border border-neutral-800/80">
-            <span className="block text-[9px] text-neutral-500 uppercase tracking-widest font-bold">Licensed Email</span>
-            <span className="text-neutral-200 font-semibold truncate block" title={email}>{email}</span>
+          <div className="space-y-1 p-3.5 bg-white/5 rounded-2xl border border-white/10">
+            <span className="block text-[9px] text-[#ebebe6]/50 uppercase tracking-widest font-semibold font-mono">Licensed Email</span>
+            <span className="text-[#ebebe6] font-medium truncate block" title={email}>{email}</span>
           </div>
-          <div className="col-span-2 space-y-1 p-3 bg-neutral-950 rounded-xl border border-neutral-800/80 font-mono">
-            <span className="block text-[9px] text-neutral-500 uppercase tracking-widest font-bold font-sans">Order Transaction Identifier</span>
-            <span className="text-emerald-400 text-[11px] select-all break-all">{txn}</span>
+          <div className="col-span-2 space-y-1 p-3.5 bg-white/5 rounded-2xl border border-white/10 font-mono">
+            <span className="block text-[9px] text-[#ebebe6]/50 uppercase tracking-widest font-semibold font-mono">Order Transaction Identifier</span>
+            <span className="text-[#27FCF2] text-[11px] select-all break-all">{txn}</span>
           </div>
         </div>
 
@@ -270,16 +270,16 @@ export default function App() {
           <button
             onClick={handleDownloadZip}
             disabled={isCompilingZIP}
-            className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-neutral-950 rounded-xl text-xs uppercase tracking-wider font-extrabold flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg shadow-emerald-500/20"
+            className="w-full py-4 bg-[#27FCF2] hover:bg-[#27FCF2]/90 disabled:opacity-50 text-black rounded-full text-xs uppercase tracking-wider font-mono font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg shadow-[#27FCF2]/20"
           >
             {isCompilingZIP ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin text-neutral-950 shrink-0" />
+                <Loader2 className="h-4 w-4 animate-spin text-black shrink-0" />
                 <span>Compiling Production Package (.ZIP)...</span>
               </>
             ) : (
               <>
-                <Download className="h-4 w-4 text-neutral-950" />
+                <Download className="h-4 w-4 text-black" />
                 <span>Download Production Package (.ZIP)</span>
               </>
             )}
@@ -287,36 +287,36 @@ export default function App() {
         </div>
 
         {/* Trust confirmation */}
-        <div className="pt-2 flex items-center justify-center gap-2 text-[10px] text-neutral-500 font-mono">
-          <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+        <div className="pt-2 flex items-center justify-center gap-2 text-[10px] text-[#ebebe6]/50 font-mono">
+          <ShieldCheck className="h-3.5 w-3.5 text-[#27FCF2]" />
           <span>Encrypted 256-bit SSL • Direct Digital Fulfillment</span>
         </div>
       </div>
 
       {/* Post transaction guides */}
-      <div className="bg-neutral-900/40 border border-neutral-800 rounded-2xl p-6 space-y-4 font-sans text-xs text-neutral-400">
-        <h3 className="font-bold text-white uppercase tracking-wider text-[11px] mb-2 flex items-center gap-1.5">
-          <FileText className="h-4 w-4 text-emerald-400" />
+      <div className="bg-black/60 border border-white/15 rounded-3xl p-6 md:p-8 space-y-4 font-sans text-xs text-[#ebebe6]/75 backdrop-blur-xl">
+        <h3 className="font-normal text-[#ebebe6] uppercase tracking-wider text-xs mb-2 flex items-center gap-2 font-memogram">
+          <FileText className="h-4 w-4 text-[#27FCF2]" />
           Next Steps for Setup
         </h3>
         
-        <ul className="space-y-3 pl-4 list-decimal marker:text-emerald-400 marker:font-bold leading-normal text-justify">
+        <ul className="space-y-3 pl-4 list-decimal marker:text-[#27FCF2] marker:font-bold leading-normal text-justify">
           <li>
             Click the button above to download your full production package (.ZIP) containing all source files and commercial license certificate.
           </li>
           <li>
             {isWebsite ? (
               <span>
-                Extract the ZIP archive and run <code className="text-emerald-400 bg-neutral-950 px-1 py-0.5 rounded">npm install</code>, then follow the enclosed <code className="text-emerald-400 bg-neutral-950 px-1 py-0.5 rounded">README.md</code>.
+                Extract the ZIP archive and run <code className="text-[#27FCF2] bg-white/5 px-1.5 py-0.5 rounded font-mono">npm install</code>, then follow the enclosed <code className="text-[#27FCF2] bg-white/5 px-1.5 py-0.5 rounded font-mono">README.md</code>.
               </span>
             ) : (
               <span>
-                Follow our <button onClick={() => onNavigate('/support')} className="text-emerald-400 hover:underline inline-flex font-semibold">Step-by-Step Installation Manual</button> to upload the theme archive directly into your Shopify admin under Online Store &gt; Themes.
+                Follow our <button onClick={() => onNavigate('/support')} className="text-[#27FCF2] hover:underline inline-flex font-semibold">Step-by-Step Installation Manual</button> to upload the theme archive directly into your Shopify admin under Online Store &gt; Themes.
               </span>
             )}
           </li>
           <li>
-            Activate technical developer assistance anytime by providing your transaction code <code>{txn.slice(0, 16)}...</code> to <a href="mailto:ibraoued14@gmail.com" className="text-emerald-400 hover:underline">ibraoued14@gmail.com</a>.
+            Activate technical developer assistance anytime by providing your transaction code <code>{txn.slice(0, 16)}...</code> to <a href="mailto:ibraoued14@gmail.com" className="text-[#27FCF2] hover:underline font-mono">ibraoued14@gmail.com</a>.
           </li>
         </ul>
       </div>
@@ -324,7 +324,7 @@ export default function App() {
       <div className="text-center">
         <button
           onClick={() => onNavigate('/themes')}
-          className="text-xs text-neutral-400 hover:text-white font-semibold inline-flex items-center gap-1 transition-colors"
+          className="text-xs text-[#ebebe6]/60 hover:text-white font-mono uppercase tracking-wider inline-flex items-center gap-1 transition-colors cursor-pointer"
         >
           <span>Return to Product Catalog</span>
           <ChevronRight className="h-3.5 w-3.5" />

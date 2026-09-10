@@ -40,8 +40,8 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
     <div id="home-view" className="relative z-10 space-y-28 pb-28">
       
       {/* 1. Signature Creativeans Hero Section */}
-      <section className="relative flex min-h-[90vh] md:min-h-[94vh] flex-col items-center justify-center px-6 pt-24 pb-16">
-        <div className="mx-auto flex flex-col items-center gap-x-12 md:flex-row md:items-end w-full max-w-7xl">
+      <section className="relative flex min-h-[90vh] md:min-h-[94vh] flex-col justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-6 md:pb-8">
+        <div className="mx-auto flex flex-col items-center gap-x-12 md:flex-row md:items-end w-full max-w-7xl my-auto">
           
           {/* Left: Giant Memogram Display Headline */}
           <div className="font-memogram text-[#ebebe6] text-[3.5rem] leading-[1.02] sm:text-[4.75rem] md:leading-[1.04] lg:text-[5.75rem] xl:text-[6.85rem] select-none w-full md:w-auto">
@@ -100,99 +100,142 @@ export function HomeView({ themes, onNavigate, onCheckout }: HomeViewProps) {
 
         </div>
 
-        {/* Creativeans Signature: "As Featured In" Scrolling Feature Bar (in the reserved space at bottom of hero) */}
-        <div className="absolute right-0 bottom-3 sm:bottom-5 md:bottom-7 left-0 px-4 sm:px-8 z-20 pointer-events-auto">
-          <div className="mx-auto flex flex-col items-center gap-3 sm:gap-6 md:gap-8 md:max-w-6xl md:flex-row md:items-center">
-            <div className="shrink-0 flex items-center gap-3">
-              <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#ebebe6]/80 uppercase font-mono whitespace-nowrap">
-                As Featured In
-              </span>
-              <div className="h-3.5 w-px bg-white/20 hidden md:block" />
+        {/* Scrolling Features Section (in the reserved space at the bottom of the hero) */}
+        <div className="w-full max-w-7xl mx-auto pt-10 sm:pt-14 mt-auto z-20">
+          <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-5 bg-black/60 border border-white/15 rounded-3xl p-3 sm:p-3.5 backdrop-blur-xl shadow-2xl">
+            
+            {/* Features label badge */}
+            <div className="shrink-0 flex items-center gap-3 pl-1 sm:pl-2">
+              <div className="flex items-center gap-2 rounded-full border border-[#27FCF2]/30 bg-[#27FCF2]/10 px-3.5 py-1.5 text-xs font-mono uppercase tracking-widest text-[#27FCF2] font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-[#27FCF2] animate-pulse" />
+                <span>Features</span>
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
 
-            <div className="relative w-full min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] md:flex-1">
-              <div className="animate-marquee flex items-center gap-12 sm:gap-16 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity select-none py-1">
-                {/* Feature 1: Shopify Plus */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="h-2 w-2 rounded-full bg-[#27FCF2]" />
-                  <span>SHOPIFY PLUS PARTNER</span>
+            {/* Continuous Marquee of Theme & Website Features */}
+            <div className="relative w-full min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:flex-1">
+              <div className="animate-marquee flex items-center gap-3 sm:gap-4 whitespace-nowrap select-none py-1">
+                {/* Track Items */}
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Layers className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Shopify OS 2.0 Native</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Sections Everywhere</span>
                 </div>
 
-                {/* Feature 2: Digital Commerce */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="text-[#27FCF2] font-black">✦</span>
-                  <span>DIGITAL COMMERCE AWARDS</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Zap className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">0.8s Sub-Second Speeds</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• 99+ Core Web Vitals</span>
                 </div>
 
-                {/* Feature 3: TechCrunch */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="font-mono text-neutral-500 font-bold">TC</span>
-                  <span>TECHCRUNCH COMMERCE</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Zero App Subscriptions</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Built-in Drawer & Upsells</span>
                 </div>
 
-                {/* Feature 4: Vogue Business */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif italic text-[#ebebe6]">
-                  <span>Vogue Business</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Download className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Instant ZIP Package</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Full Production Source</span>
                 </div>
 
-                {/* Feature 5: Forbes */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif text-[#ebebe6]">
-                  <span>FORBES COMMERCE</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Cpu className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Next.js 15 & React</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Production Web Templates</span>
                 </div>
 
-                {/* Feature 6: CSS Design Awards */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="text-[#27FCF2]">★</span>
-                  <span>CSS DESIGN AWARDS</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Layout className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Drag & Drop Visual Customizer</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• No Code Required</span>
                 </div>
 
-                {/* Feature 7: The Dieline */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span>THE DIELINE</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Commercial Digital License</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Lifetime Deployment</span>
                 </div>
 
-                {/* Feature 8: Core Web Vitals 100 */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#27FCF2]">
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>99+ PAGESPEED</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Globe className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Global Multi-Currency</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Worldwide Markets</span>
                 </div>
 
-                {/* Seamless loop duplicate */}
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="h-2 w-2 rounded-full bg-[#27FCF2]" />
-                  <span>SHOPIFY PLUS PARTNER</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Conversion-Obsessed UX</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Sticky Buy & Micro-interactions</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="text-[#27FCF2] font-black">✦</span>
-                  <span>DIGITAL COMMERCE AWARDS</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Star className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Priority Technical Support</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• 6 Months Direct Assistance</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="font-mono text-neutral-500 font-bold">TC</span>
-                  <span>TECHCRUNCH COMMERCE</span>
+                {/* Seamless Loop Duplicate */}
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Layers className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Shopify OS 2.0 Native</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Sections Everywhere</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif italic text-[#ebebe6]">
-                  <span>Vogue Business</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Zap className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">0.8s Sub-Second Speeds</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• 99+ Core Web Vitals</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-serif text-[#ebebe6]">
-                  <span>FORBES COMMERCE</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Sparkles className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Zero App Subscriptions</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Built-in Drawer & Upsells</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span className="text-[#27FCF2]">★</span>
-                  <span>CSS DESIGN AWARDS</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Download className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Instant ZIP Package</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Full Production Source</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#ebebe6]">
-                  <span>THE DIELINE</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Cpu className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Next.js 15 & React</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Production Web Templates</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider font-mono text-[#27FCF2]">
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>99+ PAGESPEED</span>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Layout className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Drag & Drop Visual Customizer</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• No Code Required</span>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Commercial Digital License</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Lifetime Deployment</span>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Globe className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Global Multi-Currency</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Worldwide Markets</span>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Conversion-Obsessed UX</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• Sticky Buy & Micro-interactions</span>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-mono text-[#ebebe6] hover:border-[#27FCF2]/50 hover:bg-white/10 transition-colors">
+                  <Star className="h-3.5 w-3.5 text-[#27FCF2] shrink-0" />
+                  <span className="font-semibold">Priority Technical Support</span>
+                  <span className="text-[#ebebe6]/50 text-[11px]">• 6 Months Direct Assistance</span>
                 </div>
               </div>
             </div>

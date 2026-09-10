@@ -53,14 +53,14 @@ export function FaqView() {
     <div id="faq-view" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       
       {/* Page Header */}
-      <div className="space-y-4 text-center">
-        <span className="text-emerald-400 text-xs font-mono tracking-widest uppercase font-bold">
+      <div className="space-y-4 text-center pb-8 border-b border-white/10">
+        <span className="text-[#27FCF2] text-xs font-mono tracking-widest uppercase font-semibold">
           Clear answers
         </span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl font-normal text-[#ebebe6] tracking-tight leading-tight uppercase font-memogram">
           Frequently Asked Questions
         </h1>
-        <p className="text-neutral-400 text-sm leading-relaxed font-sans">
+        <p className="text-[#ebebe6]/70 text-sm leading-relaxed font-sans max-w-2xl mx-auto">
           Everything you need to know about our Shopify themes, website templates, direct checkout, licensing, and immediate digital delivery.
         </p>
       </div>
@@ -72,22 +72,22 @@ export function FaqView() {
           return (
             <div 
               key={idx} 
-              className="border border-neutral-800 bg-neutral-900/10 rounded-2xl overflow-hidden transition-colors"
+              className="border border-white/15 bg-black/60 rounded-3xl overflow-hidden backdrop-blur-xl transition-colors"
             >
               <button
                 onClick={() => toggleIdx(idx)}
-                className="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-neutral-900/40 transition-colors cursor-pointer"
+                className="w-full p-6 sm:p-7 text-left flex justify-between items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer"
               >
-                <span className="text-sm sm:text-base font-bold text-white font-sans">
+                <span className="text-sm sm:text-base font-normal text-[#ebebe6] font-memogram uppercase tracking-wide">
                   {item.question}
                 </span>
-                <span className="text-neutral-500 shrink-0">
-                  {isOpen ? <ChevronUp className="h-4 w-4 text-emerald-400" /> : <ChevronDown className="h-4 w-4" />}
+                <span className="text-[#ebebe6]/50 shrink-0">
+                  {isOpen ? <ChevronUp className="h-5 w-5 text-[#27FCF2]" /> : <ChevronDown className="h-5 w-5 text-[#ebebe6]/60" />}
                 </span>
               </button>
 
               {isOpen && (
-                <div className="px-6 pb-6 pt-2 text-xs sm:text-sm text-neutral-400 font-sans leading-relaxed text-justify border-t border-neutral-850/50">
+                <div className="px-6 sm:px-7 pb-7 pt-2 text-xs sm:text-sm text-[#ebebe6]/75 font-sans leading-relaxed text-justify border-t border-white/10">
                   {item.answer}
                 </div>
               )}
@@ -97,10 +97,10 @@ export function FaqView() {
       </div>
 
       {/* Direct support invite */}
-      <div className="text-center pt-8 border-t border-neutral-900">
-        <p className="text-xs text-neutral-400">
+      <div className="text-center pt-8 border-t border-white/10">
+        <p className="text-xs text-[#ebebe6]/60 font-sans">
           Have a specific technical question? Contact our engineering desk at{' '}
-          <a href="mailto:ibraoued14@gmail.com" className="text-emerald-400 font-bold hover:underline">
+          <a href="mailto:ibraoued14@gmail.com" className="text-[#27FCF2] font-mono font-semibold hover:underline">
             ibraoued14@gmail.com
           </a>
         </p>

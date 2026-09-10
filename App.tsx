@@ -9,7 +9,6 @@ import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { BuyModal } from './components/BuyModal';
 import { FloatingBackgroundC } from './components/FloatingBackgroundC';
-import { SoundToggle } from './components/SoundToggle';
 
 // Views
 import { HomeView } from './components/HomeView';
@@ -172,9 +171,6 @@ export default function App() {
 
       {/* Global footer with legal notice links */}
       <Footer onNavigate={navigateTo} />
-
-      {/* Creativeans Ambient Atmosphere / Sound Toggle */}
-      <SoundToggle />
 
       {/* GDPR Compliant cookies bar */}
       <CookieBanner />
